@@ -7,11 +7,12 @@ public class launchBrowser {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Surekha\\Desktop\\Chrome\\chromedriver.exe");
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
         driver.get("https://www.google.com");
+
         Thread.sleep(10000);
         // Print the title of the page
         System.out.println("Page Title: " + driver.getTitle());

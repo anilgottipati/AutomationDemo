@@ -11,7 +11,7 @@ public class Sample {
     public static void main(String[] args) throws InterruptedException {
        // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
-
+//Test
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
        // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
