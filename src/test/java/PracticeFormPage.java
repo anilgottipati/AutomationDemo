@@ -11,12 +11,37 @@ public class PracticeFormPage {
     By passwordField = By.name("password");
     By loginButton = By.xpath("//span[text()='Admin']");
     By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
-
     // Constructor to initialize WebDriver
     public PracticeFormPage(WebDriver driver) {
         this.driver = driver;
     }
 
+    public void EnterText(String Option, String Value)
+    {
+        WebElement usernameElement = driver.findElement(By.id(Option));
+        usernameElement.sendKeys(Value);
+    }
+
+    public void ClickButton(String Option)
+    {
+        WebElement usernameElement = driver.findElement(By.id(Option));
+        usernameElement.click();
+    }
+
+    public void SelectDropdown(String Option, String Value)
+    {
+
+    }
+
+    public void VerifyAlerts(String Option, String Value)
+    {
+
+    }
+
+    public void VerifyFrames(String Option, String Value)
+    {
+
+    }
     // Method to enter username
     public void enterUsername(String username) {
         WebElement usernameElement = driver.findElement(usernameField);
