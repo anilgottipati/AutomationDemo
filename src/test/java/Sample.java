@@ -12,7 +12,7 @@ public class Sample {
        // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
 //Test
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+       System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
        // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
@@ -20,6 +20,10 @@ public class Sample {
         Thread.sleep(10000);
         // Print the title of the page
         System.out.println("Page Title: " + driver.getTitle());
+        String Actual = driver. getTitle();
+
+
+
         // Close the browser
         driver.quit();
     }
