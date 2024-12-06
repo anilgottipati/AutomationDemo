@@ -11,7 +11,7 @@ public class NavigationExamples {
         WebDriverManager.chromedriver().setup();
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
-        // Create an instance of ChromeDriver
+        // Create an instance of ChromeDriver123
         WebDriver driver = new ChromeDriver();
         // Open a website
         driver.get("https://www.google.com");
