@@ -11,6 +11,7 @@ public class AlertsExample {
         WebDriverManager.chromedriver().setup();
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        // How are you Main
         // How are you Branch
         WebDriver driver = new ChromeDriver();
         // Open a website
