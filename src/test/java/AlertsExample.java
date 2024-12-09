@@ -12,7 +12,7 @@ public class AlertsExample {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
         // How are you Main
-        // How are you Branch
+        // How are you Branch123
         WebDriver driver = new ChromeDriver();
         // Open a website
         driver.get("https://demoqa.com/");

@@ -28,6 +28,12 @@ public class PracticeFormPage {
         usernameElement.click();
     }
 
+    public void ClickXpathButton(String Option)
+    {
+        driver.findElement(By.xpath("//*text()="+Option+"")).click();
+
+    }
+
     public void SelectDropdown(String Option, String Value)
     {
 
