@@ -1,6 +1,8 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PracticeFormPage {
 
@@ -26,6 +28,17 @@ public class PracticeFormPage {
     {
         WebElement usernameElement = driver.findElement(By.id(Option));
         usernameElement.click();
+    }
+
+    public void launchApplication()
+    {
+        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        // Create an instance of ChromeDriver
+        WebDriver driver = new ChromeDriver();
+        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+        // Open a website
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     public void ClickXpathButton(String Option)
@@ -84,5 +97,16 @@ public class PracticeFormPage {
                 driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).click();
             }
         }
+    }
+
+    public void launchWidgetApplication()
+    {
+        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        // Create an instance of ChromeDriver
+        WebDriver driver = new ChromeDriver();
+        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+        // Open a website
+        driver.get("https://demoqa.com/text-box");
     }
 }
