@@ -28,20 +28,8 @@ public class PracticeFormPage {
         usernameElement.click();
     }
 
-    public void SelectDropdown(String Option, String Value)
-    {
 
-    }
 
-    public void VerifyAlerts(String Option, String Value)
-    {
-
-    }
-
-    public void VerifyFrames(String Option, String Value)
-    {
-
-    }
     // Method to enter username
     public void enterUsername(String username) {
         WebElement usernameElement = driver.findElement(usernameField);
