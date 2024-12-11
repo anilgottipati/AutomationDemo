@@ -13,16 +13,18 @@ public class ToVerifythePracticeForm {
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
-        driver.get("https://demoqa.com/");
+        driver.get("https://practice.expandtesting.com/radio-buttons");
 
-        driver.findElement(By.xpath("//*[contains(text(),'Forms')]")).click();
+
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[contains(text(),'Practice Form')]")).click();
+        String ele = driver.findElement(By.id("tennis")).getText();
         Thread.sleep(3000);
-        boolean ele = driver.findElement(By.xpath("//h1[contains(text(),'Practice Form')]")).isDisplayed();
-        Thread.sleep(3000);
-        Assert.assertTrue(ele);
-        // Close the browser
+//        Assert.assertTrue(ele);
+
+//        boolean ele1 =driver.findElement(By.xpath("//h1[contains(text(),'Practice Form')]")).isSelected();
+//        Assert.assertTrue(ele1);
+//        boolean ele2 =driver.findElement(By.xpath("//h1[contains(text(),'Practice Form')]")).isEnabled();
+//        Assert.assertFalse(ele2);
         driver.close();
     }
 }

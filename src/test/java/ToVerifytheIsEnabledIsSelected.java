@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FindElementsExample {
+public class ToVerifytheIsEnabledIsSelected {
     public static void main(String[] args) throws InterruptedException {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
@@ -13,17 +13,16 @@ public class FindElementsExample {
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
-        driver.get("https://demoqa.com/automation-practice-form");
-        int ele = driver.findElements(By.xpath("//label[contains(@for,'hobbies-checkbox')]")).size();
-        for (int i=1;i<=ele;i++)  //1 2 3
-        {
-            String ele1 = driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).getText();
-            if(ele1.contains("Reading"))
-            {
-                driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).click();
-            }
-        }
-        // Close the browser
+        driver.get("https://demoqa.com/");
+
+        driver.findElement(By.xpath("//*[contains(text(),'Forms')]")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[contains(text(),'Practice Form')]")).click();
+        Thread.sleep(3000);
+        boolean ele = driver.findElement(By.xpath("//h1[contains(text(),'Practice Form')]")).isDisplayed();
+        Thread.sleep(3000);
+        Assert.assertTrue(ele);
+
         driver.close();
     }
 }
