@@ -18,10 +18,11 @@ public class PracticeFormPage {
         this.driver = driver;
     }
 
-    public void EnterText(String Option, String Value)
-    {
+    public void EnterText(String Option, String Value) throws InterruptedException {
         WebElement usernameElement = driver.findElement(By.id(Option));
+        usernameElement.clear();
         usernameElement.sendKeys(Value);
+        Thread.sleep(3000);
     }
 
     public void ClickButton(String Option)
