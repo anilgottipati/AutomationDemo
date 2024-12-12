@@ -6,9 +6,11 @@ import org.openqa.selenium.WebDriver;
 public class HomeStepDefinitionFile {
 
     WebDriver driver;
-    PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+    PracticeFormPage practiceFormPage;
+//    PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
     @Given("that i am on the shopping website")
     public void that_i_am_on_the_shopping_website() {
+        practiceFormPage = new PracticeFormPage(driver);
         practiceFormPage.launchApplication();
 
     }
