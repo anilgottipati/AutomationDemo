@@ -101,10 +101,6 @@ public class PracticeFormPage {
 
     public void launchWidgetApplication()
     {
-//        WebDriverManager.chromedriver().setup();
-//        System.setProperty("webdriver.chrome.driver", "E:\\Project Files\\DeskTop122024\\GITDemo\\chromedriver.exe");
-//        WebDriver driver = new ChromeDriver();
-//        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
     }
