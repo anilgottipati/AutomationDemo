@@ -19,7 +19,7 @@ public class Verifypracticeform {
     }
     @And("User Enter the UserEmail")
     public void user_enter_the_user_email() {
-        practiceform.EnterText("userName","Anu123@gmail.com");
+        practiceform.EnterText("Anu123@gmail.com");
         throw new io.cucumber.java.PendingException();
     }
     @Then("User Enter the UserNumber")
