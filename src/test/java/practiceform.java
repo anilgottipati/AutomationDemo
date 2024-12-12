@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.swing.text.html.Option;
 
-public class practiceform {
+public class practiceform{
     WebDriver driver;
     By FirstnameField = By.id("firstname");
     By LastnameField = By.id("lastname");
@@ -21,47 +21,48 @@ public class practiceform {
 
 
     }
-
-    public void EnterText(String Option, String Value) {
-        WebElement usernameElement = driver.findElement(By.id(Option));
-        usernameElement.sendKeys("Value");
-
-    }
-
-    public void EnterText(String Option,String Value) {
-        WebElement usernameElement = driver.findElement(By.id(Option));
-        usernameElement.sendKeys("Value");
-    }
-
-    public void EnterText(String Option, String Value) {
-        WebElement usernameElement = driver.findElement(By.id(Option));
-        usernameElement.sendKeys("Value");
-    }
-
-    public void EnterText(String Option, String Value) {
-        WebElement usernameElement = driver.findElement(By.id(Option));
-        usernameElement.sendKeys("Value");
-
-    }
-
-    public void enterHobbiescheckbox(String "Hobbies") {
-        WebElement Hobby = driver.findElement(Hobbiescheckbox);
-        Hobby.click();
-    }
-
     public void launchApplication()
-
-    public static void main(String[] args) throws InterruptedException {
-        // Setup WebDriver (automatically manages the browser driver)
+    {
         WebDriverManager.chromedriver().setup();
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\Testing\\chromedriver.exe");
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         practiceform practiceform = new practiceform(driver);
-        driver.get("https://demoqa.com/text-box");
+        driver.get("https://demoqa.com/automation-practice-form")
+    }
+
+    public void enterFirstname(String username) {
+        WebElement firstname = driver.findElement(FirstnameField);
+        firstname.sendKeys(username);
+
+    }
+
+    public void enterLastname(String Lastname) {
+        WebElement lastname = driver.findElement(LastnameField);
+        lastname.sendKeys(Lastname);
+    }
+
+    public void enterEmail(String EmailID) {
+        WebElement mail = driver.findElement(Email);
+        mail.sendKeys(EmailID);
+    }
+
+    public void enterno(String Mobile) {
+        WebElement Number = driver.findElement(Mobileno);
+        Number.sendKeys(Mobile);
+
+    }
+
+    public void enterHobbiescheckbox(String Hobbies) {
+        WebElement Hobby = driver.findElement(Hobbiescheckbox);
+        Hobby.click();
     }
 }
+
+
+
+
 
 
 

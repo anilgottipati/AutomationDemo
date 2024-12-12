@@ -14,17 +14,17 @@ public class Verifypracticeform {
     }
     @When("User Enter the FirstName")
     public void user_enter_the_first_name() {
-        practiceform.EnterText("userName","Anu");
+        practiceform.enterLastname("userName","Anu");
         throw new io.cucumber.java.PendingException();
     }
     @And("User Enter the UserEmail")
     public void user_enter_the_user_email() {
-        practiceform.EnterText("Anu123@gmail.com");
+        practiceform.enterEmail("Anu123@gmail.com");
         throw new io.cucumber.java.PendingException();
     }
     @Then("User Enter the UserNumber")
     public void user_enter_the_user_number() {
-        practiceform.EnterText("userName","7465477557");
+        practiceform.enterno("7465477557");
         throw new io.cucumber.java.PendingException();
     }
 }
