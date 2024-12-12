@@ -10,10 +10,10 @@ public class Hooks {
     @Before
     public void setUp() {
         // Assuming you are using ChromeDriver
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
         // Create an instance of ChromeDriver
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        driver = new ChromeDriver();
+
     }
 
     @After

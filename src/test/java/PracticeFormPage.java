@@ -103,7 +103,6 @@ public class PracticeFormPage {
     {
 //        WebDriverManager.chromedriver().setup();
 //        System.setProperty("webdriver.chrome.driver", "E:\\Project Files\\DeskTop122024\\GITDemo\\chromedriver.exe");
-//        // Create an instance of ChromeDriver
 //        WebDriver driver = new ChromeDriver();
 //        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website

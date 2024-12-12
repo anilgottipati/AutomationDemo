@@ -1,12 +1,17 @@
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomeStepDefinitionFile {
 
-    WebDriver driver;
+//    WebDriverManager.chromedriver().setup();
+//        System.setProperty("webdriver.chrome.driver", "E:\\Project Files\\DeskTop122024\\GITDemo\\chromedriver.exe");
+    //        // Create an instance of ChromeDriver
+    WebDriver driver = new ChromeDriver();
+
     PracticeFormPage practiceFormPage=new PracticeFormPage(driver);
 
 
