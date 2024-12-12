@@ -7,7 +7,7 @@ public class frames {
 
         WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\Testing\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\Project Files\\DeskTop122024\\GITDemo\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/frames");

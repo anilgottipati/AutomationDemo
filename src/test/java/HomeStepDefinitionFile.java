@@ -1,31 +1,19 @@
-import io.cucumber.java.en.And;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class HomeStepDefinitionFile {
 
-    WebDriver driver;
-    PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+    WebDriver driver = new ChromeDriver();
 
-    @Given("that i am on the shopping website")
-    public void that_i_am_on_the_shopping_website() {
-        practiceFormPage.launchApplication();
+    PracticeFormPage practiceFormPage=new PracticeFormPage(driver);
 
-    }
-
-    @When("i add an item to the basket")
-    public void i_add_an_item_to_the_basket() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("i can view the item in my basket")
-    public void i_can_view_the_item_in_my_basket() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
 
     @Given("User launch the Application")
@@ -33,33 +21,42 @@ public class HomeStepDefinitionFile {
         // Write code here that turns the phrase above into concrete actions
         practiceFormPage.launchWidgetApplication();
     }
+//    @When("User Enter the UserName")
+//    public void user_enter_the_user_name() {
+//        // Write code here that turns the phrase above into concrete actions
+//        practiceFormPage.EnterText("firstName","Automation Selenium");
+//    }
 
-    @When("User Enter the UserName")
-    public void user_enter_the_user_name() {
-        // Write code here that turns the phrase above into concrete actions
-        practiceFormPage.EnterText("userName", "Automation Selenium");
+
+    @When("User Enter the FirstName")
+    public void user_enter_the_first_name() throws InterruptedException {
+        practiceFormPage.EnterText("firstName","Automation");
     }
-
-    @When("User Enter the UserEmail")
-    public void user_enter_the_user_email() {
-        // Write code here that turns the phrase above into concrete actions
-        practiceFormPage.EnterText("userEmail", "Auto@gmail.com");
-    }
-
-    @When("User Enter the currentAddress")
-    public void user_enter_the_current_address() {
-        // Write code here that turns the phrase above into concrete actions
-        practiceFormPage.EnterText("currentAddress", "Chennai");
-    }
-
-    @Then("click on submit")
-    public void click_on_submit() {
-        // Write code here that turns the phrase above into concrete actions
-        practiceFormPage.ClickButton("submit");
+    @When("User Enter the LastName")
+    public void user_enter_the_last_name() throws InterruptedException {
+        practiceFormPage.EnterText("lastName","Selenium");
     }
 
 
+    @When("User Enter the Following details")
+    public void user_enter_the_following_details(DataTable dataTable) throws InterruptedException {
+        // Convert DataTable into a list of Users
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for (List<String> row : rows.subList(1, rows.size())) {  // Skipping header row
+            String FieldName = row.get(0);
+            String Value = row.get(1);
+            practiceFormPage.EnterText(FieldName,Value);
+        }
 
+    }
 
+    @When("User Click on {string} Button")
+    public void userClickOnButton(String Button) {
+        practiceFormPage.ClickButton(Button);
+    }
 
-
+    @When("User Enter the {string} and {string}")
+    public void userEnterTheAnd(String arg0, String arg1) throws InterruptedException {
+        practiceFormPage.EnterText(arg0,arg1);
+    }
+}

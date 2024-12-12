@@ -18,10 +18,11 @@ public class PracticeFormPage {
         this.driver = driver;
     }
 
-    public void EnterText(String Option, String Value)
-    {
+    public void EnterText(String Option, String Value) throws InterruptedException {
         WebElement usernameElement = driver.findElement(By.id(Option));
+        usernameElement.clear();
         usernameElement.sendKeys(Value);
+        Thread.sleep(3000);
     }
 
     public void ClickButton(String Option)
@@ -33,7 +34,7 @@ public class PracticeFormPage {
     public void launchApplication()
     {
         WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
@@ -52,7 +53,15 @@ public class PracticeFormPage {
 
     }
 
+    public void VerifyAlerts(String Option, String Value)
+    {
 
+    }
+
+    public void VerifyFrames(String Option, String Value)
+    {
+
+    }
     // Method to enter username
     public void enterUsername(String username) {
         WebElement usernameElement = driver.findElement(usernameField);
@@ -93,11 +102,7 @@ public class PracticeFormPage {
 
     public void launchWidgetApplication()
     {
-        WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\Testing\\chromedriver.exe");
-        // Create an instance of ChromeDriver
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website
-        driver.get("https://demoqa.com/text-box");
+        driver.get("https://demoqa.com/automation-practice-form");
     }
 }
