@@ -43,9 +43,14 @@ public class payroll {
 
         WebElement grossSalaryElement = driver.findElement(By.id("resultGross"));
         String actualGrossSalary = grossSalaryElement.getText();
-        double expectedGrossSalary = (8 * 20) * (1 - 0.02);
-        String expectedGrossSalaryStr = String.format("%.2f", expectedGrossSalary).trim();
-        Assert.assertEquals("Gross salary does not match", expectedGrossSalaryStr, actualGrossSalary);
+        double expectedGrossSalary = (8 * 20) ;
+        double ActualTaxDeduction = payroll.calculateTax(160,2);
+        String expectedGrossSalaryStr = String.format("%.2f", expectedGrossSalary+0);
+        Assert.assertEquals( expectedGrossSalaryStr, actualGrossSalary);
+        WebElement actualTax = driver.findElement(By.id("result"));
+        String TaxDeduction = actualTax.getText();
+        double NetSalary1=(160.00-3.20);
+        Assert.assertEquals(expectedGrossSalaryStr,NetSalary1+0);
         driver.quit();
     }
 }

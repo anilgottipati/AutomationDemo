@@ -33,7 +33,7 @@ public class PracticeFormPage {
     public void launchApplication()
     {
         WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
@@ -94,9 +94,8 @@ public class PracticeFormPage {
     public void launchWidgetApplication()
     {
         WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\Testing\\chromedriver.exe");
         // Create an instance of ChromeDriver
-        WebDriver driver = new ChromeDriver();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website
         driver.get("https://demoqa.com/text-box");
