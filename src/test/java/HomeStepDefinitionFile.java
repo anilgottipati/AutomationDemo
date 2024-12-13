@@ -1,4 +1,5 @@
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,7 +15,7 @@ public class HomeStepDefinitionFile {
 
     PracticeFormPage practiceFormPage=new PracticeFormPage(driver);
 
-
+    LoginPage loginPage =new LoginPage(driver);
 
     @Given("User launch the Application")
     public void user_launch_the_application() {
@@ -58,5 +59,29 @@ public class HomeStepDefinitionFile {
     @When("User Enter the {string} and {string}")
     public void userEnterTheAnd(String arg0, String arg1) throws InterruptedException {
         practiceFormPage.EnterText(arg0,arg1);
+    }
+
+    @And("User Enter LastName")
+    public void userEnterLastName() {
+
+    }
+
+    @When("User Enter FirstName")
+    public void userEnterFirstName() {
+    }
+
+    @Given("User launch Application")
+    public void userLaunchApplication(DataTable dataTable) {
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for (List<String> row : rows.subList(1, rows.size())) {  // Skipping header row
+            String Url = row.get(0);
+            loginPage.launchApplication(Url);
+        }
+
+    }
+
+    @Given("User launch Gmail Application")
+    public void userLaunchGmailApplication() {
+        loginPage.launchGmailApplication();
     }
 }
