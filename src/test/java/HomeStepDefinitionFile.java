@@ -16,16 +16,12 @@ public class HomeStepDefinitionFile {
 
 
 
-    @Given("User launch the Application")
-    public void user_launch_the_application() {
+    @Given("User launch Application")
+    public void user_launch_application() {
         // Write code here that turns the phrase above into concrete actions
-        practiceFormPage.launchWidgetApplication();
+        practiceFormPage.launchApplication();
     }
-//    @When("User Enter the UserName")
-//    public void user_enter_the_user_name() {
-//        // Write code here that turns the phrase above into concrete actions
-//        practiceFormPage.EnterText("firstName","Automation Selenium");
-//    }
+
 
 
     @When("User Enter the FirstName")

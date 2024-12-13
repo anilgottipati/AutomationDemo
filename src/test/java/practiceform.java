@@ -8,65 +8,94 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.swing.text.html.Option;
 
-public class practiceform{
-    WebDriver driver;
-    By FirstnameField = By.id("firstname");
-    By LastnameField = By.id("lastname");
-    By Email = By.id("userEmail");
-    By Mobileno = By.id("userNumber");
-    By Hobbiescheckbox = By.xpath("//*text()='music]");
 
-    public practiceform(WebDriver driver) {
-        this.driver = driver;
-
-
-    }
-    public void launchApplication()
+public  PracticeFormPage{
     {
-        WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\Testing\\chromedriver.exe");
-        // Create an instance of ChromeDriver
-        WebDriver driver = new ChromeDriver();
-        practiceform practiceform = new practiceform(driver);
-        driver.get("https://demoqa.com/automation-practice-form")
+        WebDriver driver;
+
+        // Locators for the elements
+        By usernameField = By.name("username");
+        By passwordField = By.name("password");
+        By loginButton = By.xpath("//span[text()='Admin']");
+        By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
+
+   public PracticeFormPage(WebDriver driver)
+    {
+        this.driver = driver;
     }
 
-    public void enterFirstname(String username) {
-        WebElement firstname = driver.findElement(FirstnameField);
-        firstname.sendKeys(username);
+public void EnterText(String Option, String Value) throws InterruptedException WebDriver
+    WebDriver driver;
+    driver;
+    {
+    WebElement usernameElement = driver.findElement(By.id(Option));
+    usernameElement.clear();
+    usernameElement.sendKeys(Value);
+    Thread.sleep(3000);
+}
 
-    }
+public void ClickButton(String Option)
+{
+    WebElement usernameElement = driver.findElement(By.id(Option));
+    usernameElement.click();
+}
 
-    public void enterLastname(String Lastname) {
-        WebElement lastname = driver.findElement(LastnameField);
-        lastname.sendKeys(Lastname);
-    }
+public void launchApplication()
+{
+    WebDriverManager.chromedriver().setup();
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
+    // Create an instance of ChromeDriver
+    WebDriver driver = new ChromeDriver();
+    PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+    // Open a website
+    driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+}
 
-    public void enterEmail(String EmailID) {
-        WebElement mail = driver.findElement(Email);
-        mail.sendKeys(EmailID);
-    }
+// Method to enter username
+public void enterUsername(String username) {
+    WebElement usernameElement = driver.findElement(usernameField);
+    usernameElement.sendKeys(username);
+}
 
-    public void enterno(String Mobile) {
-        WebElement Number = driver.findElement(Mobileno);
-        Number.sendKeys(Mobile);
+// Method to enter password
+public void enterPassword(String password) {
+    WebElement passwordElement = driver.findElement(passwordField);
+    passwordElement.sendKeys(password);
+}
 
-    }
+// Method to click the login button
+public void clickLoginButton() {
+    WebElement loginBtn = driver.findElement(loginButton);
+    loginBtn.click();
+}
 
-    public void enterHobbiescheckbox(String Hobbies) {
-        WebElement Hobby = driver.findElement(Hobbiescheckbox);
-        Hobby.click();
+// Method to perform login action
+public void login(String username, String password) {
+    enterUsername(username);
+    enterPassword(password);
+    clickLoginButton();
+}
+
+public void SelectHobbies(String HobbiesType)
+{
+    int ele = driver.findElements(HobbiesCheckBox).size();
+    for (int i=1;i<=ele;i++)  //1 2 3
+    {
+        String ele1 = driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).getText();
+        if(ele1.contains(HobbiesType))
+        {
+            driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).click();
+        }
     }
 }
 
+public void launchWidgetApplication()
+{
+    // Open a website
+    driver.get("https://demoqa.com/automation-practice-form");
+}
 
 
-
-
-
-
-
-
-
+}
 

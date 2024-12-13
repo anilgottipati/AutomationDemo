@@ -42,26 +42,7 @@ public class PracticeFormPage {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
-    public void ClickXpathButton(String Option)
-    {
-        driver.findElement(By.xpath("//*text()="+Option+"")).click();
 
-    }
-
-    public void SelectDropdown(String Option, String Value)
-    {
-
-    }
-
-    public void VerifyAlerts(String Option, String Value)
-    {
-
-    }
-
-    public void VerifyFrames(String Option, String Value)
-    {
-
-    }
     // Method to enter username
     public void enterUsername(String username) {
         WebElement usernameElement = driver.findElement(usernameField);
@@ -100,7 +81,7 @@ public class PracticeFormPage {
         }
     }
 
-    public void launchWidgetApplication()
+    public void launch Application();
     {
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
