@@ -3,32 +3,28 @@ Feature: TestToVerifythePracticeForm
   Background:
     Given User launch Application
 
-  Scenario: Verify the practice Info
-    When User Enter the FirstName
+    Scenario: Verify the PracticeForm
+      When User Enter the FirstName
+      |FieldName|Value|
+      |FirstName  |Radhika |
+
     And User Enter the LastName
+      |FieldName|Value|
+      | LastName |C    |
 
 
   Scenario: Verify the Email  info
-    When User Enter the Following details
-      | FieldName | Value           |
-      | userEmail | Abc@gamil.com   |
-      | userEmail | Abcd1@gamil.com |
-      | userEmail | Abc2@gamil.com  |
 
+    When User Enter the Email
+      |FieldName|Value|
+      |UserEmail  |CR@47gmail.com    |
 
-  Scenario Outline: Verify the Mobile  info
-    When User Enter the "<FieldName>" and "<Value>"
+     And User Select the Gender
+       |FieldName|Value|
+       |Gender  |Female |
 
-Examples:
-  | FieldName  | Value |
-  | userNumber | 812388 |
-  | userNumber | 877868 |
+    Then User Select the Hobbies
 
+      |FieldName|Value|
+      |Mobile  |658565765 |
 
-  Scenario: Verify the Address  info
-    When User Enter the Following details
-      | FieldName      | Value   |
-      | currentAddress | hyd |
-
-  Scenario: Verify the Submit  info
-    When User Click on "submit" Button
