@@ -1,3 +1,5 @@
+package PageClass;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -97,9 +99,4 @@ public class PracticeFormPage {
         }
     }
 
-    public void launchApplication();
-    {
-        // Open a website
-        driver.get("https://demoqa.com/automation-practice-form");
-    }
 }
