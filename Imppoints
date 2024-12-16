@@ -1,0 +1,47 @@
+JDK-->Java Developer Kit
+Convert Source code to Byte Code
+
+Program To Run Needs an Environment
+JRE-->Java RunTime Environment Provides that Environment for Byte code to Run
+
+API-->Application Program Interface
+Provides Predefined without write lowlevel Back Ground Code
+Example:
+Reading and Writing Files
+Java IO Library
+
+Platform Independent Language:
+In language like C and C++ If source code is compiled on Particular Operating System
+like Windows it generates a Machine Code that only understand by the Windows OS and not by MAC
+or Linux vice Versa called Platform Dependency.
+
+In Java when we compiled the code, the Java Compiler generates the Intermediate code called
+Byte code, this is not Machine code for Particular Operating System.This byte code can be interpreted
+by Windows JVM JIT to underlined OS Windows and Windows JVM JIT to underlined Linux OS
+
+Oops:
+Map Real World Problems to Software Solutions
+
+Encapsulation:
+It will Protect the properties and Functionalities of an object from other object
+
+Example: Like Capsule it have all Properties and Data of a Particular Object and we have all
+Methods that access particular Object
+
+Here Capsule is called a Class and Data we call it as Properties\Variables and Functionalities\Methods
+can access that data.
+If other objects need to access this data if we follow proper encapsulation then they always
+need to go through these Methods\Functionalities to access the Properties\variables of that Object.
+
+So Writing the Data and Code in one Single Unit, so in Java we use a Class to achieve the
+encapsulation
+Class
+{
+Data
+Code
+}
+
+
+
+
+
