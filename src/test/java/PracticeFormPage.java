@@ -11,6 +11,8 @@ public class PracticeFormPage {
     // Locators for the elements
     By usernameField = By.name("username");
     By passwordField = By.name("password");
+    By EmailField = By.name("userEmail");
+    By MobileNoField = By.name("mobile");
     By loginButton = By.xpath("//span[text()='Admin']");
     By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
     // Constructor to initialize WebDriver
@@ -49,6 +51,20 @@ public class PracticeFormPage {
         usernameElement.sendKeys(username);
     }
 
+    //method to email
+    public void enterEmail(String username) {
+        WebElement usernameElement = driver.findElement(EmailField);
+        usernameElement.sendKeys(username);
+    }
+
+    //method to mobile
+    public void enterMobile(String username) {
+        WebElement usernameElement = driver.findElement(MobileNoField);
+        usernameElement.sendKeys(username);
+    }
+
+
+
     // Method to enter password
     public void enterPassword(String password) {
         WebElement passwordElement = driver.findElement(passwordField);
@@ -81,7 +97,7 @@ public class PracticeFormPage {
         }
     }
 
-    public void launch Application();
+    public void launchApplication();
     {
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");

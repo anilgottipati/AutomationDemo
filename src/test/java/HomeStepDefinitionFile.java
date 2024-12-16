@@ -34,6 +34,19 @@ public class HomeStepDefinitionFile {
     }
 
 
+    @When("User Enter the userEmail ")
+    public void user_enter_the_userEmail() throws InterruptedException {
+        practiceFormPage.EnterText("userEmail","abc@gmail.com");
+    }
+
+
+    @When("User Enter the userNumber ")
+    public void user_enter_the_userNumber() throws InterruptedException {
+        practiceFormPage.EnterText("userNumber","76575");
+    }
+
+
+
     @When("User Enter the Following details")
     public void user_enter_the_following_details(DataTable dataTable) throws InterruptedException {
         // Convert DataTable into a list of Users
@@ -55,4 +68,6 @@ public class HomeStepDefinitionFile {
     public void userEnterTheAnd(String arg0, String arg1) throws InterruptedException {
         practiceFormPage.EnterText(arg0,arg1);
     }
+
+
 }
