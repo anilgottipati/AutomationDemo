@@ -23,6 +23,7 @@ Oops:
 Map Real World Problems to Software Solutions
 
 Encapsulation:
+-------------
 It will Protect the properties and Functionalities of an object from other object
 
 Example: Like Capsule it have all Properties and Data of a Particular Object and we have all
@@ -41,7 +42,119 @@ Data
 Code
 }
 
+Inheritance:
+-----------
+Inheritance is a Process of defining a new Object with the Help of Existing object.
+In Java we use key word Extends to inherit
+
+Example:
+Iphone 17 Extends Iphone 16
+
+Iphone 17-->Update Existing Object Functionalities
+Iphone 16-->Access Existing Object Functionalities
+
+Re-Usability:
+Vehicle->Car and Vehicle->Bus
+-->From Car it goes BMW or Audi
+-->From Bus it goes Volvo or Benz
+So first they use the Existing Functionalities and then Implement their own things called Inheritance.
+
+Is A Relation: Is Just a Term we refer in Inheritance
+BWW Is A Car, we cant say BMW is A Bus.
 
 
+Abstraction:
+-----------
+Abstraction is a Principle of hiding all Unnecessary details of an Object and only showing only the
+essential features that other object need in order to communicate with that Object.
 
+In Java we achieve the Abstraction using Interface
 
+Example: TV- We don't care about how it Implemented , we just Turn on and COntrol the TV
+Car-Same
+
+Polymorphism:
+------------
+Poly-- Multi
+
+Morphism-->Shapes\Behaviour
+
+If an object can take different Shapes and behave differently when other object accessed it
+at different points in time then that is called Polymorphism.
+In Java we will use Method Overloading and Overriding.
+
+Example:
+Person Interacts with Parents, Child and Colleagues.
+
+Person(Object) behave differently with Parents (Respect)
+Person(Object) behave differently with Child (Care)
+Person(Object) behave differently with Colleagues (Professional)
+So same object while communicating with other Objects expresses different behaviour, this
+is nothing but polymorphism
+
+Procedure Oriented and Object Oriented:
+--------------------------------------
+Sequence of tasks are to be done in Procedure
+Large Programs divided into Functions
+Data move openly from Function to Function in Procedure Oriented.
+Function Share the Global Data as there is no Access Specifiers
+Ex: C , COBOL
+
+Object Oriented that Modernises the Program by creating the Partitioned memory area for Data
+and methods that access the Data.
+Large Programs divided into Objects
+In Object Oriented data is hidden [Encapsulation]
+In Object Oriented we have access Specifiers [Public, Protected, Private]
+Ex: C++, Java
+
+Building Blocks of Java Applications;
+------------------------------------
+There are 4 Building blocks of Java applications
+Class
+Variables
+Methods
+Blocks
+
+In Oops every object is represented by a Class:
+variable and Methods can be static or Non Static
+
+Class (Unique Identity)
+{
+variable
+Methods
+Blocks
+}
+
+Variable:
+variable are identity that we give to a memory location where our data is Stored.
+Data Type  Identity:
+Int i=100;
+
+Non - Static --> each object will have its own values for Non Static variables.
+
+Account Number1:
+Account Number2:
+Balance1:4000
+Balance2:5000
+
+Static:
+If something is common across object Instances, then it is Static or Class level Variables
+If Each object have its onw value then it is Non-Static variables
+
+Bank Name :
+
+Method:
+------
+Methos is a set of Program Instrutions that takes as Input and Produce as output.
+Syntax:
+return Type Identity (Arg)
+{
+Body of Method
+}
+
+4 Types of Methods:
+------------------
+Void MethodName(Void)
+int MethodName(Void)
+int MethodName(int)
+Void MethodName(int)
