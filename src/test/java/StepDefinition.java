@@ -13,7 +13,6 @@ import java.util.List;
 
 public class StepDefinition {
     WebDriver driver = new ChromeDriver();
-    PageClass pageClass = new PageClass(driver);
     PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
 
 
@@ -24,18 +23,18 @@ public class StepDefinition {
     }
 
     @Given("User Enter FirstName")
-    public void userEnterFirstName() {
+    public void userEnterFirstName() throws InterruptedException {
         PracticeFormPage.Enterfirstname("Radhika");
     }
 
 
-    @When("User Enter  LastName")
-    public void userEnterLastName() {
+    @And("User Enter  LastName")
+    public void userEnterLastName() throws InterruptedException {
         PracticeFormPage.EnterLastname("C");
     }
 
     @When("User Enter  Email")
-    public void userEnterEmail() {
+    public void userEnterEmail() throws InterruptedException {
         PracticeFormPage.EnterEmailField("CR@47gmail.com");
     }
 
@@ -43,8 +42,8 @@ public class StepDefinition {
     public void userSelectGender() {
     }
 
-    @And("User Enter Mobile")
-    public void userEnterMobile() {
+    @Then("User Enter Mobile")
+    public void userEnterMobile() throws InterruptedException {
         PracticeFormPage.EnterMobileField("758667686");
     }
 

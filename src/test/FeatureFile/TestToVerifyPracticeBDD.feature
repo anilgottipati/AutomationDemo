@@ -5,7 +5,7 @@ Feature: TestToVerifythePracticeForm
 
     Scenario: When user enter details
       Given User Enter FirstName
-      When User Enter  LastName
+      And User Enter  LastName
       When User Select Gender
       When User Enter  Email
       Then User Enter Mobile
