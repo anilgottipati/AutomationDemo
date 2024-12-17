@@ -1,5 +1,3 @@
-package StepDefinitionFile;
-
 import PageClass.PracticeFormPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
