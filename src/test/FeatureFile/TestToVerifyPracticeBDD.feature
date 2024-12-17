@@ -1,30 +1,20 @@
 Feature: TestToVerifythePracticeForm
 
-  Background:
+  Scenario: Launch the form Browser
     Given User launch Application
 
-    Scenario: Verify the PracticeForm
-      When User Enter the FirstName
-      |FieldName|Value|
-      |FirstName  |Radhika |
+    Scenario: When user enter details
+      Given User Enter FirstName
+      When User Enter  LastName
+      When User Select Gender
+      When User Enter  Email
+      Then User Enter Mobile
 
-    And User Enter the LastName
-      |FieldName|Value|
-      | LastName |C    |
-
-
-  Scenario: Verify the Email  info
-
-    When User Enter the Email
-      |FieldName|Value|
-      |UserEmail  |CR@47gmail.com    |
-
-     And User Select the Gender
-       |FieldName|Value|
-       |Gender  |Female |
-
-    Then User Select the Hobbies
-
-      |FieldName|Value|
-      |Mobile  |658565765 |
-
+      Scenario: Verify the details
+        When user enter following details
+        |FieldName| Value|
+        |FirstName|Radhika|
+        |LastName|C|
+        |Gender|Female|
+        |Email |47@gmail|
+        |Mobile|47477444|
