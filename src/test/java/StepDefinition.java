@@ -50,7 +50,7 @@ public class StepDefinition {
     @When("user enter following details")
     public void userEnterFollowingDetails(DataTable dataTable) { throws InterruptedException
         List<List<String>> rows = dataTable.asLists(String.class);
-        for(List<String> row : rows.subList(1, rows).size()){
+        for(List<String> row : rows.subList(1,rows).size()){
             String FieldName = row.get(0);
             String Value = row.get(1);
             PracticeFormPage.EnterText(FieldName,Value);
