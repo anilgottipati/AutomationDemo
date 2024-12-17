@@ -24,6 +24,8 @@ public class PracticeFormPage {
     By GenderField = By.id("gender-radio-2");
     By MobileNoField = By.name("userNumber");
 
+    public static void EnterText(String FieldName, String value) {
+    }
 
 
     public void launchApplication()

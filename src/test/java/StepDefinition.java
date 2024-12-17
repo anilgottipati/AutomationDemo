@@ -9,6 +9,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class StepDefinition {
     WebDriver driver = new ChromeDriver();
     PageClass pageClass = new PageClass(driver);
@@ -48,11 +50,11 @@ public class StepDefinition {
 
     @When("user enter following details")
     public void userEnterFollowingDetails(DataTable dataTable) { throws InterruptedException
-            List<List<String>> rows = dataTable.asLists(String.class);
-        for(List<String> row : rows.subList(1,rows.size())){
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for(List<String> row : rows.subList(1, rows).size()){
             String FieldName = row.get(0);
             String Value = row.get(1);
-            pageClass.EnterText(FieldName,Value);
+            PracticeFormPage.EnterText(FieldName,Value);
         }
     }
 }
