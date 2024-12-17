@@ -22,8 +22,6 @@ public class PracticeFormPage {
     By GenderField = By.id("gender-radio-2");
     static By MobileNoField = By.name("userNumber");
 
-    public static void EnterText(String FieldName, String value) {
-    }
 
 
     public static void launchApplication()
@@ -39,23 +37,31 @@ public class PracticeFormPage {
 
 
     // Method to enter username
-    public static void Enterfirstname(String username) throws InterruptedException {
+    public static void Enterfirstname(String Option , String Value) throws InterruptedException {
         WebElement Firstname = driver.findElement(FirstNameField);
-        Firstname.sendKeys(username);
+        Firstname.sendKeys("Value");
         Thread.sleep(3000);
     }
 
-    public static void EnterLastname(String username) throws InterruptedException {
+    public void EnterText(String Option , String Value) throws InterruptedException {
+        WebElement Firstname = driver.findElement(By.id(Option));
+        Firstname.sendKeys(Value);
+        Thread.sleep(3000);
+    }
+
+    public static void EnterLastname(String Option , String Value) throws InterruptedException {
         WebElement Lastname = driver.findElement(LastNameField);
-        Lastname.sendKeys(username);
+        Lastname.sendKeys("Value");
         Thread.sleep(3000);
     }
     //method to email
-    public static void EnterEmailField(String username) throws InterruptedException {
+    public static void EnterEmailField(String Option , String Value) throws InterruptedException {
         WebElement Email = driver.findElement(EmailField);
-        Email.sendKeys(username);
+        Email.sendKeys("Value");
         Thread.sleep(3000);
     }
+
+
 
     public void ClickButton(String Option) throws InterruptedException{
         String option = Option;
@@ -64,9 +70,9 @@ public class PracticeFormPage {
 
 
     //method to mobile
-        public static void EnterMobileField(String username) throws InterruptedException {
+        public static void EnterMobileField(String Option , String Value) throws InterruptedException {
             WebElement Mobile = driver.findElement(MobileNoField);
-            Mobile.sendKeys(username);
+            Mobile.sendKeys("Value");
             Thread.sleep(3000);
         }
 

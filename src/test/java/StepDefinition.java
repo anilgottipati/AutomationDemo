@@ -16,41 +16,38 @@ public class StepDefinition {
 
     @Given("User launch Application")
     public void userLaunchApplication() {
-        PracticeFormPage.launchApplication();
-    }
-
-    @Given("User Enter FirstName")
-    public void userEnterFirstName() throws InterruptedException {
-        PracticeFormPage.Enterfirstname("Radhika");
+        practiceFormPage.launchApplication();
     }
 
 
-    @And("User Enter  LastName")
-    public void userEnterLastName() throws InterruptedException {
-        PracticeFormPage.EnterLastname("C");
+
+    @When("User Click Gender")
+    public void userClickGender() throws InterruptedException {
+        practiceFormPage.ClickButton("Value");
     }
 
-    @When("User Enter  Email")
-    public void userEnterEmail() throws InterruptedException {
-        PracticeFormPage.EnterEmailField("CR@47gmail.com");
-    }
-
-    @When("User Select Gender")
-    public void userSelectGender() {
-    }
-
-    @Then("User Enter Mobile")
-    public void userEnterMobile() throws InterruptedException {
-        PracticeFormPage.EnterMobileField("758667686");
-    }
 
     @When("user enter following details")
     public void userEnterFollowingDetails(DataTable dataTable) throws InterruptedException{
         List<List<String>> rows = dataTable.asLists(String.class);
-        for(List<String> row : rows.subList(1,rows).size()){
+        for(List<String> row : rows.subList(1,rows.size())){
             String FieldName = row.get(0);
             String Value = row.get(1);
-            PracticeFormPage.EnterText(FieldName,Value);
+            practiceFormPage.EnterText(FieldName,Value);
+        }
+    }
+
+    @Given("User Enter {string}")
+    public void userEnter(String arg0) {
+    }
+
+    @And("User Enter below details")
+    public void userEnterBelowDetails(DataTable dataTable) throws InterruptedException {
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for(List<String> row : rows.subList(1,rows.size())){
+            String Option = row.get(0);
+            String Value = row.get(1);
+            practiceFormPage.EnterText(Option,Value);
         }
     }
 }

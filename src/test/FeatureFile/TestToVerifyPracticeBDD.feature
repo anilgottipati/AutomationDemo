@@ -6,9 +6,18 @@ Feature: TestToVerifythePracticeForm
     Scenario: When user enter details
       Given User Enter FirstName
       And User Enter  LastName
-      When User Select Gender
+      When User Click Gender
       When User Enter  Email
       Then User Enter Mobile
+
+  Scenario: When user enter details1
+     And User Enter below details
+    |Option|Value|
+    |firstName|Radhika|
+    |firstName|Radhika|
+    |firstName|Radhika|
+    |firstName|Radhika|
+
 
       Scenario: Verify the details
         When user enter following details
