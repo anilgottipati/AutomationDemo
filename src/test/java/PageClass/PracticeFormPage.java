@@ -93,14 +93,16 @@ public class PracticeFormPage {
     }
 
 
-    public void SelectState(String Option) {
+    public void SelectState(String Option) throws InterruptedException {
         WebElement State = driver.findElement(By.id("stateCity-label"));
         State.sendKeys("Value");
+        Thread.sleep(3000);
     }
 
-    public void ClickButton(String value) {
+    public void ClickButton(String value) throws InterruptedException {
         String Option = "Option";
         driver.findElement(By.xpath("//*text()='" +Option+"'")).click();
+        Thread.sleep(3000);
     }
 
 }
