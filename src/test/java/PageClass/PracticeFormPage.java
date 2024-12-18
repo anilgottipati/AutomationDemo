@@ -27,11 +27,11 @@ public class PracticeFormPage {
 
 
     public static void launchApplication() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
-        // Create an instance of ChromeDriver
-        WebDriver driver = new ChromeDriver();
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+//        WebDriverManager.chromedriver().setup();
+//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
+//        // Create an instance of ChromeDriver
+//        WebDriver driver = new ChromeDriver();
+//        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
         Thread.sleep(3000);

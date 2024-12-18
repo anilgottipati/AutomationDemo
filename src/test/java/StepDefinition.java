@@ -49,9 +49,9 @@ public class StepDefinition {
     }
 
     @Given("User Enter FirstName")
-    public void UserEnterFirstName(String Option, String Value) throws InterruptedException {
+    public void UserEnterFirstName() throws InterruptedException {
         WebElement element = driver.findElement(By.id("firstName"));
-        PracticeFormPage.EnterText(Option, Value);
+//        PracticeFormPage.EnterText(Option, Value);
     }
 
     @And("User Enter  LastName")
