@@ -64,7 +64,7 @@ public class PracticeFormPage {
 
 
 
-    public void GenderField(String Option, String Value) throws InterruptedException{
+    public void ClickButton(String Option, String Value) throws InterruptedException{
         String option = Option;
         driver.findElement(By.xpath("//*text()='" +Option+"'")).click();
     }
