@@ -19,9 +19,8 @@ public class StepDefinition {
 
     @Given("User launch Application")
     public void userLaunchApplication() {
-        practiceFormPage.launchApplication();
+        PracticeFormPage.launchApplication();
     }
-
 
 
     @When("User Click Gender")
@@ -30,36 +29,48 @@ public class StepDefinition {
     }
 
 
-    @When("user enter following details")
-    public void userEnterFollowingDetails(DataTable dataTable) throws InterruptedException{
-        List<List<String>> rows = dataTable.asLists(String.class);
-        for(List<String> row : rows.subList(1,rows.size())){
-            String FieldName = row.get(0);
-            String Value = row.get(1);
-            practiceFormPage.EnterText(FieldName,Value);
-        }
-    }
-
     public void userEnter(String ele) {
     }
 
     @And("User Enter below details")
     public void userEnterBelowDetails(DataTable dataTable) throws InterruptedException {
         List<List<String>> rows = dataTable.asLists(String.class);
-        for(List<String> row : rows.subList(1,rows.size())){
+        for (List<String> row : rows.subList(1, rows.size())) {
             String Option = row.get(0);
             String Value = row.get(1);
-            practiceFormPage.EnterText(Option,Value);
+            PracticeFormPage.EnterText(Option, Value);
         }
     }
 
     @Then("User Select State")
-    public void userSelectState(String Option) {
+    public void userSelectState(String Option, String Value) {
         WebElement element = driver.findElement(By.id("stateCity-label"));
-        Select dropdown = new Select(element);
-        dropdown.selectByVisibleText(Option);
+        practiceFormPage.SelectState("Value");
     }
 
+    @Given("User Enter FirstName")
+    public void UserEnterFirstName(String Option, String Value) throws InterruptedException {
+        WebElement element = driver.findElement(By.id("firstName"));
+        PracticeFormPage.EnterText(Option, Value);
+    }
+
+    @And("User Enter  LastName")
+    public void UserEnterLastName(String Option, String Value) throws InterruptedException {
+        WebElement element = driver.findElement(By.id("lastName"));
+        PracticeFormPage.EnterText(Option, Value);
+    }
+
+    @When("User Enter  Email")
+    public void UserEnterEmail(String Option, String Value) throws InterruptedException {
+        WebElement element = driver.findElement(By.id("userEmail"));
+        PracticeFormPage.EnterText(Option, Value);
+    }
+
+    @Then("User Enter Mobile")
+    public void UserEnterMobile(String Option, String Value) throws InterruptedException {
+        WebElement element = driver.findElement(By.id("userNumber"));
+        PracticeFormPage.EnterText(Option, Value);
+    }
 }
 
 
