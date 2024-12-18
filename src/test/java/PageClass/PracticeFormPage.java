@@ -67,6 +67,7 @@ public class PracticeFormPage {
     public void ClickButton(String Option, String Value) throws InterruptedException{
         String option = Option;
         driver.findElement(By.xpath("//*text()='" +Option+"'")).click();
+        Thread.sleep(3000);
     }
 
 

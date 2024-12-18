@@ -40,8 +40,7 @@ public class StepDefinition {
         }
     }
 
-    @Given("User Enter {string}")
-    public void userEnter(String arg0) {
+    public void userEnter(String ele) {
     }
 
     @And("User Enter below details")
