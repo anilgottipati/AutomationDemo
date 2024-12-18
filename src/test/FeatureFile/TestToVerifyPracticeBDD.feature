@@ -9,21 +9,15 @@ Feature: TestToVerifythePracticeForm
       When User Click Gender
       When User Enter  Email
       Then User Enter Mobile
-
+      Then User Select State
   Scenario: When user enter details1
      And User Enter below details
     |Option|Value|
     |firstName|Radhika|
-    |firstName|Radhika|
-    |firstName|Radhika|
-    |firstName|Radhika|
+    |LastName|C|
+    |Gender|Female|
+    |Email |47@gmail|
+    |Mobile|47477444|
+    |State | Haryana|
 
 
-      Scenario: Verify the details
-        When user enter following details
-        |FieldName| Value|
-        |FirstName|Radhika|
-        |LastName|C|
-        |Gender|Female|
-        |Email |47@gmail|
-        |Mobile|47477444|

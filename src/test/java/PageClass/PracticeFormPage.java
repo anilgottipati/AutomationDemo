@@ -19,8 +19,9 @@ public class PracticeFormPage {
     static By FirstNameField = By.id("firstName");
     static By LastNameField = By.id("lastName");
     static By EmailField = By.id("userEmail");
-    By GenderField = By.id("gender-radio-2");
+    static By GenderField = By.xpath("gender-radio-2");
     static By MobileNoField = By.name("userNumber");
+    static By SelectStateField = By.id(("stateCity-label"));
 
 
 
@@ -63,7 +64,7 @@ public class PracticeFormPage {
 
 
 
-    public void ClickButton(String Option) throws InterruptedException{
+    public void GenderField(String Option, String Value) throws InterruptedException{
         String option = Option;
         driver.findElement(By.xpath("//*text()='" +Option+"'")).click();
     }
@@ -75,6 +76,12 @@ public class PracticeFormPage {
             Mobile.sendKeys("Value");
             Thread.sleep(3000);
         }
+
+    public static void EnterState(String Option , String Value) throws InterruptedException {
+        WebElement State = driver.findElement(SelectStateField);
+        State.sendKeys("Value");
+        Thread.sleep(3000);
+    }
 
     }
 
