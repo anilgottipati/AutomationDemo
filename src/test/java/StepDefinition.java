@@ -43,7 +43,7 @@ public class StepDefinition {
     }
 
     @Then("User Select State")
-    public void userSelectState(String Option, String Value) {
+    public void userSelectState(String Option, String Value) throws InterruptedException {
         WebElement element = driver.findElement(By.id("stateCity-label"));
         practiceFormPage.SelectState("Value");
     }
