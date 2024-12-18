@@ -26,8 +26,7 @@ public class PracticeFormPage {
 
 
 
-    public static void launchApplication()
-    {
+    public static void launchApplication() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
         // Create an instance of ChromeDriver

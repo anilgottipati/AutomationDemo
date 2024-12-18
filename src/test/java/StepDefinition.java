@@ -18,7 +18,7 @@ public class StepDefinition {
 
 
     @Given("User launch Application")
-    public void userLaunchApplication() {
+    public void userLaunchApplication() throws InterruptedException {
         PracticeFormPage.launchApplication();
     }
 
