@@ -116,31 +116,30 @@ public class PracticeFormPage {
 
         WebDriver driver = new ChromeDriver();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
-        // Open a website
-        driver.get("https://demoqa.com/browser-windows");
+        driver.get("https://demoqa.com/alerts");
         Thread.sleep(10000);
         practiceFormPage.ClickButton("tabButton");
         Set<String> allWindowHandles = driver.getWindowHandles();
 
 
-        // Create an iterator to loop through all window handles
+
         Iterator<String> iterator = allWindowHandles.iterator();
 
-        // Loop through each window handle
+
         String mainWindow = iterator.next();  // Main window -->Parent Window
         String newWindow = iterator.next();   // New window -->Child Window
         Thread.sleep(5000);
-        // Switch to the new window
+
         driver.switchTo().window(newWindow);
         Thread.sleep(5000);
-        // Perform actions on the new window (for example, print the title)
+
         System.out.println("Title of the new window: " + driver.getCurrentUrl());
         Assert.assertEquals("https://demoqa.com/alerts", driver.getCurrentUrl());
 
-        // Switch back to the main window
+
         driver.switchTo().window(mainWindow);
 
-        // Perform actions on the main window
+
         System.out.println("Title of the new window: " + driver.getCurrentUrl());
         Assert.assertEquals("https://demoqa.com/alerts", driver.getCurrentUrl());
 

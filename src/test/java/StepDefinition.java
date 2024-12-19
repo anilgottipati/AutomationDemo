@@ -26,7 +26,6 @@ public class StepDefinition {
     }
 
 
-
     public void userEnter(String ele) {
     }
 
@@ -79,7 +78,7 @@ public class StepDefinition {
     @Then("I Verify {string} and Click {string}")
     public void iVerifyAndClick(String msg, String AlertButton) throws InterruptedException {
         practiceFormPage.VerifyAlertText(AlertButton);
-        Assert.assertEquals(msg,practiceFormPage.VerifyAlertText(AlertButton));
+        Assert.assertEquals(msg, practiceFormPage.VerifyAlertText(AlertButton));
     }
 
     @And("User click on {string}")
@@ -88,10 +87,10 @@ public class StepDefinition {
     }
 
 
-    @When("user click on alertwidget")
+    @When("user click on alert widget")
     public void user_click_on_alertwidget() {
-        driver.getCurrentUrl();
-        throw new io.cucumber.java.PendingException();
+        driver.findElement(By.linkText("Open New Window")).click();
+
     }
 }
 
