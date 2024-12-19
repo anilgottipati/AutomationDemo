@@ -84,13 +84,13 @@ public class StepDefinition {
 
     @And("User click on {string}")
     public void userClickOn(String text) throws InterruptedException {
-    driver.getCurrentUrl();
+
     }
 
 
     @When("user click on alertwidget")
     public void user_click_on_alertwidget() {
-
+        driver.getCurrentUrl();
         throw new io.cucumber.java.PendingException();
     }
 }
