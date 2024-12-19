@@ -78,10 +78,6 @@ public class StepDefinition {
         Alert alert = driver.switchTo().alert();
     }
 
-    @And("user click on alert button")
-    public void userClickOnAlertButton() {
-
-    }
 }
 
 

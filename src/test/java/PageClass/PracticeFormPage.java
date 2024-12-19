@@ -1,5 +1,6 @@
 package PageClass;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -103,24 +104,24 @@ public class PracticeFormPage {
     }
 
 
-    public void Alert;
 
+    public class Alert {
+        public void main(String[] args) throws InterruptedException {
 
+            WebDriverManager.chromedriver().setup();
 
-    {
-        public static void main(String[]Object args;
-        args) throws InterruptedException {
         PracticeFormPage.driver.get("https://demoqa.com/alertsWindows");
         driver.findElement((By.xpath("//span[tex()='Alerts']"))).click();
         PracticeFormPage.driver.findElement(By.id("alertButton")).click();
         Alert simpleAlert = PracticeFormPage.driver.switchTo().alert();
-         simpleAlert.sendKeys();
-        String ele = simpleAlert.getText();
+        String ele =   simpleAlert.getText();
         Assert.assertEquals("you click a button", ele);
         simpleAlert.accept();
         driver.close();
 
        }
+
+
     }
 
 }

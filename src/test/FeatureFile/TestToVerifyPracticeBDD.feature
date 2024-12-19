@@ -25,7 +25,6 @@ Feature: TestToVerifythePracticeForm
     Scenario: Verify Alerts message
       Given User launch Application
       And user on alerts page
-      And user click on alert button
 
 
 
