@@ -87,7 +87,8 @@ public class PracticeFormPage {
 
     public void SelectState(String Option) throws InterruptedException {
         WebElement State = driver.findElement(By.id("stateCity-label"));
-        State.sendKeys("Value");
+        Select se = new Select(driver.findElement(By.xpath("//*[@id='Old Select Menu']")));
+        se.selectByIndex(2);
         sleep(3000);
     }
 
