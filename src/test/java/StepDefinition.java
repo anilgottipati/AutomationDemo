@@ -25,11 +25,6 @@ public class StepDefinition {
     }
 
 
-    @When("User Click genterWrapper")
-    public void userClickGender() throws InterruptedException {
-        practiceFormPage.ClickButton("Value");
-    }
-
 
     public void userEnter(String ele) {
     }
