@@ -6,7 +6,14 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.text.html.Option;
+
+import java.util.Iterator;
+import java.util.Set;
 
 import static java.lang.Thread.sleep;
 
@@ -17,6 +24,7 @@ public class PracticeFormPage {
 
     public PracticeFormPage(WebDriver driver) {
         PracticeFormPage.driver = driver;
+        driver.get("https://demoqa.com/automation-practice-form");
     }
 
 
@@ -67,7 +75,6 @@ public class PracticeFormPage {
     }
 
 
-
     //method to mobile
     public static void EnterMobileField(String Option, String Value) throws InterruptedException {
         WebElement Mobile = driver.findElement(MobileNoField);
@@ -105,11 +112,44 @@ public class PracticeFormPage {
     }
 
 
-    public String VerifyAlertText(String AlertButton) throws InterruptedException {
+
+    public String VerifyAlertText(String AlertButton) throws InterruptedException {;
+
+        WebDriver driver = new ChromeDriver();
+        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+        // Open a website
+        driver.get("https://demoqa.com/browser-windows");
+        Thread.sleep(10000);
+        practiceFormPage.ClickButton("tabButton");
+        Set<String> allWindowHandles = driver.getWindowHandles();
+
+
+        // Create an iterator to loop through all window handles
+        Iterator<String> iterator = allWindowHandles.iterator();
+
+        // Loop through each window handle
+        String mainWindow = iterator.next();  // Main window -->Parent Window
+        String newWindow = iterator.next();   // New window -->Child Window
+        Thread.sleep(5000);
+        // Switch to the new window
+        driver.switchTo().window(newWindow);
+        Thread.sleep(5000);
+        // Perform actions on the new window (for example, print the title)
+        System.out.println("Title of the new window: " + driver.getCurrentUrl());
+        Assert.assertEquals("https://demoqa.com/alerts",driver.getCurrentUrl());
+
+        // Switch back to the main window
+        driver.switchTo().window(mainWindow);
+
+        // Perform actions on the main window
+        System.out.println("Title of the new window: " + driver.getCurrentUrl());
+        Assert.assertEquals("https://demoqa.com/alerts",driver.getCurrentUrl());
+
+
+
         Alert simpleAlert = driver.switchTo().alert();
-        String Text =  simpleAlert.getText();
-        switch (AlertButton)
-        {
+        String Text = simpleAlert.getText();
+        switch (AlertButton) {
             case "OK":
                 simpleAlert.accept();
                 break;
@@ -122,13 +162,7 @@ public class PracticeFormPage {
         return Text;
 
     }
-
-
-
-
-
-    }
-
+}
 
 
 

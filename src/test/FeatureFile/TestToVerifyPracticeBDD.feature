@@ -23,6 +23,7 @@ Feature: TestToVerifythePracticeForm
 
     Scenario: Verify Alerts message
       Given User launch Application
+      When user click on alertwidget
       And user on alerts page
       And User click on "alertButton"
       Then I Verify "You clicked a button" and Click "OK"

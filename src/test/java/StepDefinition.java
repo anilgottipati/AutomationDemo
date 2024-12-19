@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
+import java.util.Set;
 
 public class StepDefinition {
     WebDriver driver = new ChromeDriver();
@@ -83,8 +84,14 @@ public class StepDefinition {
 
     @And("User click on {string}")
     public void userClickOn(String text) throws InterruptedException {
+    driver.getCurrentUrl();
+    }
 
-        practiceFormPage.ClickButton1(text);
+
+    @When("user click on alertwidget")
+    public void user_click_on_alertwidget() {
+
+        throw new io.cucumber.java.PendingException();
     }
 }
 
