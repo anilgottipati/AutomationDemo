@@ -82,14 +82,13 @@ public class PracticeFormPage {
         sleep(3000);
     }
 
-
-    public static void EnterState(String Option, String Value) throws InterruptedException {
-        WebElement State = driver.findElement(SelectStateField);
-        Select dropdown = new Select(State);
-        dropdown.selectByVisibleText(Option);
-        State.sendKeys("Value");
-        sleep(3000);
-    }
+  //  public static void EnterState(String Option, String Value) throws InterruptedException {
+    //    WebElement State = driver.findElement(SelectStateField);
+      //  Select dropdown = new Select(State);
+        //dropdown.selectByVisibleText(Option);
+        //State.sendKeys("Value");
+        //sleep(3000);
+    //}
 
 
     public void SelectState(String Option) throws InterruptedException {
