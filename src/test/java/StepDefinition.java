@@ -71,6 +71,11 @@ public class StepDefinition {
         WebElement element = driver.findElement(By.id("userNumber"));
         PracticeFormPage.EnterText(Option, Value);
     }
+
+    @And("user on alerts page")
+    public void userOnAlertsPage() {
+        driver.findElement((By.xpath("//span[tex()='Alerts']"))).click();
+    }
 }
 
 

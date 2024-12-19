@@ -22,4 +22,10 @@ Feature: TestToVerifythePracticeForm
     |userNumber|47477444|
     |stateCity-label| Haryana|
 
+    Scenario: Verify Alerts message
+      Given User launch Application
+      And user on alerts page
+      And user click on alert button
+      Then user see an alert message
+      Then user accept alert
 
