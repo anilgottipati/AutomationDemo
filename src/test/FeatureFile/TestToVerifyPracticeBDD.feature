@@ -17,7 +17,6 @@ Feature: TestToVerifythePracticeForm
     |Option|Value|
     |firstName|Radhika|
     |lastName|C|
-    |Gender|Female|
     |userEmail |47@gmail|
     |userNumber|47477444|
     |stateCity-label| Haryana|
@@ -25,6 +24,8 @@ Feature: TestToVerifythePracticeForm
     Scenario: Verify Alerts message
       Given User launch Application
       And user on alerts page
+      And User click on "alertButton"
+      Then I Verify "You clicked a button" and Click "OK"
 
 
 

@@ -23,7 +23,6 @@ public class PracticeFormPage {
     static By FirstNameField = By.id("firstName");
     static By LastNameField = By.id("lastName");
     static By EmailField = By.id("userEmail");
-    static By GenderField = By.id("genterWrapper");
     static By MobileNoField = By.name("userNumber");
     static By SelectStateField = By.id(("stateCity-label"));
 
@@ -68,11 +67,6 @@ public class PracticeFormPage {
     }
 
 
-    public void ClickButton(String Option, String Value) throws InterruptedException {
-        driver.findElement(By.xpath("//*[text()='" + Option + "']")).click();
-        sleep(3000);
-    }
-
 
     //method to mobile
     public static void EnterMobileField(String Option, String Value) throws InterruptedException {
@@ -97,6 +91,12 @@ public class PracticeFormPage {
         sleep(3000);
     }
 
+    public void ClickButton1(String Option) throws InterruptedException {
+        WebElement ele = driver.findElement(By.id(Option));
+        ele.click();
+        sleep(3000);
+    }
+
     public void ClickButton(String value) throws InterruptedException {
         String Option = "Option";
         driver.findElement(By.xpath("//*text()='" + Option + "'")).click();
@@ -104,26 +104,31 @@ public class PracticeFormPage {
     }
 
 
-
-    public class Alert {
-        public void main(String[] args) throws InterruptedException {
-
-            WebDriverManager.chromedriver().setup();
-
-        PracticeFormPage.driver.get("https://demoqa.com/alertsWindows");
-        driver.findElement((By.xpath("//span[tex()='Alerts']"))).click();
-        PracticeFormPage.driver.findElement(By.id("alertButton")).click();
-        org.openqa.selenium.Alert simpleAlert = PracticeFormPage.driver.switchTo().alert();
+    public String VerifyAlertText(String AlertButton) throws InterruptedException {
+        Alert simpleAlert = driver.switchTo().alert();
         String Text =  simpleAlert.getText();
-        Assert.assertEquals("you click a button",Text);
-        simpleAlert.accept();
-        driver.close();
+        switch (AlertButton)
+        {
+            case "OK":
+                simpleAlert.accept();
+                break;
+            case "NO":
+                simpleAlert.dismiss();
+                break;
+
         }
+
+        return Text;
+
+    }
+
+
 
 
 
     }
 
-}
+
+
 
 

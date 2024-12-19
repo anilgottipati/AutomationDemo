@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +25,7 @@ public class StepDefinition {
     }
 
 
-    @When("User Click Gender")
+    @When("User Click genterWrapper")
     public void userClickGender() throws InterruptedException {
         practiceFormPage.ClickButton("Value");
     }
@@ -79,6 +80,17 @@ public class StepDefinition {
         Alert alert = driver.switchTo().alert();
     }
 
+    @Then("I Verify {string} and Click {string}")
+    public void iVerifyAndClick(String msg, String AlertButton) throws InterruptedException {
+        practiceFormPage.VerifyAlertText(AlertButton);
+        Assert.assertEquals(msg,practiceFormPage.VerifyAlertText(AlertButton));
+    }
+
+    @And("User click on {string}")
+    public void userClickOn(String text) throws InterruptedException {
+
+        practiceFormPage.ClickButton1(text);
+    }
 }
 
 
