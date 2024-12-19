@@ -112,8 +112,8 @@ public class PracticeFormPage {
     }
 
 
-
-    public String VerifyAlertText(String AlertButton) throws InterruptedException {;
+    public String VerifyAlertText(String AlertButton) throws InterruptedException {
+        ;
 
         WebDriver driver = new ChromeDriver();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
@@ -136,15 +136,14 @@ public class PracticeFormPage {
         Thread.sleep(5000);
         // Perform actions on the new window (for example, print the title)
         System.out.println("Title of the new window: " + driver.getCurrentUrl());
-        Assert.assertEquals("https://demoqa.com/alerts",driver.getCurrentUrl());
+        Assert.assertEquals("https://demoqa.com/alerts", driver.getCurrentUrl());
 
         // Switch back to the main window
         driver.switchTo().window(mainWindow);
 
         // Perform actions on the main window
         System.out.println("Title of the new window: " + driver.getCurrentUrl());
-        Assert.assertEquals("https://demoqa.com/alerts",driver.getCurrentUrl());
-
+        Assert.assertEquals("https://demoqa.com/alerts", driver.getCurrentUrl());
 
 
         Alert simpleAlert = driver.switchTo().alert();
@@ -162,8 +161,7 @@ public class PracticeFormPage {
         return Text;
 
     }
+
 }
-
-
 
 
