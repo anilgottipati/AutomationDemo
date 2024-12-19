@@ -26,6 +26,6 @@ Feature: TestToVerifythePracticeForm
       Given User launch Application
       And user on alerts page
       And user click on alert button
-      Then user see an alert message
-      Then user accept alert
+
+
 

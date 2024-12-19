@@ -103,14 +103,15 @@ public class PracticeFormPage {
     }
 
 
-    public static Alert;
+    public void Alert;
+
 
 
     {
-        public static void main(String[] args) throws InterruptedException {
+        public static void main(String[]Object args;
+        args) throws InterruptedException {
         PracticeFormPage.driver.get("https://demoqa.com/alertsWindows");
         driver.findElement((By.xpath("//span[tex()='Alerts']"))).click();
-        sleep(3000);
         PracticeFormPage.driver.findElement(By.id("alertButton")).click();
         Alert simpleAlert = PracticeFormPage.driver.switchTo().alert();
          simpleAlert.sendKeys();
