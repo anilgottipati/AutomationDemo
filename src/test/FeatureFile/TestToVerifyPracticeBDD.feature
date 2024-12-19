@@ -18,8 +18,8 @@ Feature: TestToVerifythePracticeForm
     |firstName|Radhika|
     |lastName|C|
     |Gender|Female|
-    |Email |47@gmail|
-    |Mobile|47477444|
-    |State | Haryana|
+    |userEmail |47@gmail|
+    |userNumber|47477444|
+    |stateCity-label| Haryana|
 
 
