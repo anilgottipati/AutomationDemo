@@ -113,13 +113,13 @@ public class PracticeFormPage {
         PracticeFormPage.driver.get("https://demoqa.com/alertsWindows");
         driver.findElement((By.xpath("//span[tex()='Alerts']"))).click();
         PracticeFormPage.driver.findElement(By.id("alertButton")).click();
-        Alert simpleAlert = PracticeFormPage.driver.switchTo().alert();
-        String ele =   simpleAlert.getText();
-        Assert.assertEquals("you click a button", ele);
+        org.openqa.selenium.Alert simpleAlert = PracticeFormPage.driver.switchTo().alert();
+        String Text =  simpleAlert.getText();
+        Assert.assertEquals("you click a button",Text);
         simpleAlert.accept();
         driver.close();
+        }
 
-       }
 
 
     }

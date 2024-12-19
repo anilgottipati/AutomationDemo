@@ -75,6 +75,7 @@ public class StepDefinition {
 
     @And("user on alerts page")
     public void userOnAlertsPage() {
+        driver.findElement(By.id("alertButton")).click();
         Alert alert = driver.switchTo().alert();
     }
 
