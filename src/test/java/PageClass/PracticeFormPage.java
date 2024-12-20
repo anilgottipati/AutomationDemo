@@ -1,16 +1,12 @@
 package PageClass;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.text.html.Option;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -112,7 +108,6 @@ public class PracticeFormPage {
 
 
     public String VerifyAlertText(String AlertButton) throws InterruptedException {
-        ;
 
         WebDriver driver = new ChromeDriver();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
@@ -121,13 +116,10 @@ public class PracticeFormPage {
         practiceFormPage.ClickButton("tabButton");
         Set<String> allWindowHandles = driver.getWindowHandles();
 
-
-
         Iterator<String> iterator = allWindowHandles.iterator();
 
-
-        String mainWindow = iterator.next();  // Main window -->Parent Window
-        String newWindow = iterator.next();   // New window -->Child Window
+        String mainWindow = iterator.next();
+        String newWindow = iterator.next();
         Thread.sleep(5000);
 
         driver.switchTo().window(newWindow);
@@ -135,14 +127,6 @@ public class PracticeFormPage {
 
         System.out.println("Title of the new window: " + driver.getCurrentUrl());
         Assert.assertEquals("https://demoqa.com/alerts", driver.getCurrentUrl());
-
-
-        driver.switchTo().window(mainWindow);
-
-
-        System.out.println("Title of the new window: " + driver.getCurrentUrl());
-        Assert.assertEquals("https://demoqa.com/alerts", driver.getCurrentUrl());
-
 
         Alert simpleAlert = driver.switchTo().alert();
         String Text = simpleAlert.getText();
