@@ -1,3 +1,4 @@
+
 import PageClass.PracticeFormPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import static jdk.internal.agent.Agent.getText;
 import static junit.framework.Assert.assertTrue;
 
@@ -19,7 +19,7 @@ public class StepDefinition {
 
     @Given("launch browser")
     public void launchApplication() throws InterruptedException {
-        PracticeFormPage.launchApplication();
+        practiceFormPage.launchApplication();
     }
 
     @And("user enters username and password")

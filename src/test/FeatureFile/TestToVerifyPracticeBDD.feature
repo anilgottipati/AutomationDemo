@@ -9,9 +9,17 @@ Feature: TestToVerifythePracticeForm
     Then user is navigate to homepage
     Then account services will display
 
-    |username|password|Account Services|
-    |Radhika |4747    |Open New Account ,Accounts Overview,Transfer Funds,Bill Pay,Find Transactions,Update Contact Info, Request Loan, Log Out|
-
+    |username|password|
+    |Radhika |4747    |
+    Then account services will display
+  |Open New Account |
+  |Accounts Overview|
+  |Transfer Funds   |
+  |Bill Pay         |
+  |Find Transactions|
+  |Update Contact Info|
+  |Request Loan       |
+  |Log Out|
 
 
 
