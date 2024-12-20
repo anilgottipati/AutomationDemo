@@ -48,7 +48,7 @@ public class PracticeFormPage {
     // Method to enter username
     public void Enterusername(String Option, String Value) throws InterruptedException {
         WebElement Firstname = usernameField.findElement(driver);
-        Firstname.sendKeys("Value");
+        Firstname.sendKeys("username");
         sleep(3000);
     }
 
@@ -61,7 +61,7 @@ public class PracticeFormPage {
      // enter password
     public void Enterpassword(String Option, String Value) throws InterruptedException {
         WebElement Lastname = driver.findElement(passwordField);
-        Lastname.sendKeys("Value");
+        Lastname.sendKeys("password");
         sleep(3000);
     }
 
