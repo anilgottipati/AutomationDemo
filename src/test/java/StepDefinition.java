@@ -1,4 +1,4 @@
-package StepDefinition;
+package StepDefinitionFile;
 
 import PageClass.PracticeFormPage;
 import io.cucumber.java.en.And;
@@ -29,13 +29,14 @@ public class StepDefinition {
     }
 
     @And("user enters username and password")
-    public void userEntersUsernameAndPassword(String username, String password) {
+    public void userEntersUsernameAndPassword(String username, String password) throws InterruptedException {
         WebElement usernameElement = driver.findElement(By.id("username"));
-        usernameElement.sendKeys("username");
+        PracticeFormPage.EnterText("username","Radhika");
+        usernameElement.sendKeys("Radhika");
 
             WebElement passwordElement = driver.findElement(By.id("password"));
-            passwordElement.sendKeys("password");
-
+        PracticeFormPage.EnterText("password","4747");
+        passwordElement.sendKeys("4747");
     }
 
 
