@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertTrue;
 public class StepDefinition {
     WebDriver driver = new ChromeDriver();
     PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
-
+    String submit;
 
     @Given("launch browser")
     public void launchApplication() throws InterruptedException {
@@ -55,6 +55,8 @@ public class StepDefinition {
 
     @And("User Click on Request Loan")
     public void userClickOnRequestLoan() {
+        WebElement element=driver.findElement(By.name(submit));
+        element.click();
     }
 
         @When("User Enter on Loan Amount")
