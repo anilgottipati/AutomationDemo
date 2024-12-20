@@ -1,23 +1,15 @@
 import PageClass.PracticeFormPage;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import jdk.internal.agent.Agent;
 import junit.framework.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
-import java.util.Set;
 
 import static jdk.internal.agent.Agent.getText;
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
 public class StepDefinition {
@@ -63,17 +55,20 @@ public class StepDefinition {
 
     @And("User Click on Request Loan")
     public void userClickOnRequestLoan() {
+    }
 
+        @When("User Enter on Loan Amount")
+        public void userEnterOnLoanAmount() {
         WebElement Amount = driver.findElement(By.id("amount"));
         Amount.sendKeys("1000");
     }
 
-    @When("User Enter on Loan Amount")
-    public void userEnterOnLoanAmount() {
+        @When("User Enter Down Payment")
+        public void userEnterDownPayment(){
+            WebElement Downpayment = driver.findElement(By.id("downPayment"));
+            Downpayment.sendKeys("1000");
 
-        WebElement loan = driver.findElement(By.id("downpayment"));
-        loan.sendKeys("200");
-    }
+        }
 
 
 
@@ -96,6 +91,8 @@ public class StepDefinition {
         Assert.assertEquals(("Approved"), getText(String.valueOf(status)));
     }
 }
+
+
 
 
 

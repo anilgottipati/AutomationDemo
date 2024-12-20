@@ -1,17 +1,13 @@
 package PageClass;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Element;
-import static java.awt.geom.Path2D.contains;
 import static java.lang.Thread.sleep;
 
 
@@ -22,7 +18,7 @@ public class PracticeFormPage {
 
     public PracticeFormPage(WebDriver driver) {
         PracticeFormPage.driver = driver;
-        driver.get("https://parabank.parasoft.com/parabank/login.htm;jsessionid=CF970277AF1165903C2603F9D522B406");
+        driver.get("https://parabank.parasoft.com/parabank/overview.htm");
 
         PracticeFormPage.driver =driver;
     }
@@ -39,13 +35,13 @@ public class PracticeFormPage {
 
 
     public static void launchApplication() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-      // System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
+        //WebDriverManager.chromedriver().setup();
+      //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
 
         //WebDriver driver = new ChromeDriver();
        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website
-        driver.get("https://parabank.parasoft.com/parabank/overview.htm");
+        //driver.get("https://parabank.parasoft.com/parabank/overview.htm");
     }
 
 
@@ -61,12 +57,14 @@ public class PracticeFormPage {
         username.sendKeys(Value);
         sleep(3000);
     }
+
      // enter password
     public void Enterpassword(String Option, String Value) throws InterruptedException {
         WebElement Lastname = driver.findElement(passwordField);
         Lastname.sendKeys("Value");
         sleep(3000);
     }
+
      //click login
     public void ClickButton(String submit) throws InterruptedException {
         WebElement ele = driver.findElement(By.name(submit));

@@ -18,7 +18,7 @@ Feature: TestToVerifythePracticeForm
 Scenario : User on Request loan
     And User Click on Request Loan
     When User Enter on Loan Amount
-    When USer Enter Down Payment
+    When User Enter Down Payment
 
   |amount|downPayment|
   |1000|200|
