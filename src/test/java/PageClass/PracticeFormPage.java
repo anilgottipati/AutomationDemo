@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Element;
 import static java.awt.geom.Path2D.contains;
 import static java.lang.Thread.sleep;
 
@@ -16,6 +18,7 @@ import static java.lang.Thread.sleep;
 public class PracticeFormPage {
 
      static WebDriver driver;
+    private Object String;
 
 
     public PracticeFormPage(WebDriver driver) {
@@ -26,9 +29,9 @@ public class PracticeFormPage {
     }
 
 
-     By usernameField = By.id("username");
-    static By passwordField = By.id("password");
-    By LoginField = By.name("submit");
+    By usernameField = By.id("username");
+    By passwordField = By.id("password");
+    By ClickButton = By.name("submit");
     By LoanAmountField=By.id("amount");
     By DownPaymentField=By.id("downPayment");
     By LoanProvider=By.id("loanProviderName");
@@ -66,8 +69,8 @@ public class PracticeFormPage {
         sleep(3000);
     }
      //click login
-    public void ClickLogin(String Option) throws InterruptedException {
-        WebElement ele = driver.findElement(By.id(Option));
+    public void ClickButton(String submit) throws InterruptedException {
+        WebElement ele = driver.findElement(By.name(submit));
         ele.click();
         sleep(3000);
     }
@@ -93,11 +96,14 @@ public class PracticeFormPage {
 
     public void EnterLoanText(String Option, String Value) throws InterruptedException {
         WebElement loanText = driver.findElement(LoanProvider);
-        loanText.sendKeys("Wealth Securities Dynamic Loans (WSDL)");
+        Assert.assertEquals(loanText.getText(),("Wealth Securities Dynamic Loans (WSDL)"));
     }
 
-    public void SimpleDateFormat{
-        public static void string(String[] Date){
+    public void SimpleDateFormat(){
+
+
+            String = Date;
+            {
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY");
             String strDate= formatter.format(date);
@@ -107,7 +113,7 @@ public class PracticeFormPage {
 
     public void EnterloanStatusText(String Option, String Value) throws InterruptedException {
         WebElement loanStatus = driver.findElement(Status);
-        loanStatus.sendKeys("Approved");
+        Assert.assertEquals(loanStatus.getText(),("Approved"));
     }
 
 

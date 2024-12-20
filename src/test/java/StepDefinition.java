@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import jdk.internal.agent.Agent;
 import junit.framework.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -15,6 +16,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.Set;
 
+import static jdk.internal.agent.Agent.getText;
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
 public class StepDefinition {
@@ -46,7 +49,7 @@ public class StepDefinition {
 
     @Then("user is navigate to homepage")
     public void userIsNavigateToHomepage() {
-
+    driver.navigate().to("https://parabank.parasoft.com/parabank/overview.htm");
     }
 
     @Then("account services will display")
@@ -60,29 +63,37 @@ public class StepDefinition {
 
     @And("User Click on Request Loan")
     public void userClickOnRequestLoan() {
-        driver.findElement(By.id("amount"));
+
+        WebElement Amount = driver.findElement(By.id("amount"));
+        Amount.sendKeys("1000");
     }
 
     @When("User Enter on Loan Amount")
     public void userEnterOnLoanAmount() {
-        driver.findElement(By.id("downPayment"));
+
+        WebElement loan = driver.findElement(By.id("downpayment"));
+        loan.sendKeys("200");
     }
 
 
 
     @When("User will see Loan Provider")
     public void userWillSeeLoanProvider() {
-        driver.findElement(By.id("loanProviderName"));
+
+        WebElement Loanprovider = driver.findElement(By.id("loanProviderName"));
+        Assert.assertEquals(("Wealth Securities Dynamic Loans (WSDL"), getText(String.valueOf(Loanprovider)));
     }
 
     @And("User will see current date")
     public void userWillSeeCurrentDate() {
-        driver.findElement(By.id("responseDate"));
+        WebElement Date = driver.findElement(By.id("responseDate"));
+        Assert.assertEquals(("Date"), getText(String.valueOf(Date)));
     }
 
     @Then("User will see Status")
     public void userWillSeeStatus() {
-        driver.findElement(By.id("loanStatus"));
+        WebElement status = driver.findElement(By.id("loanStatus"));
+        Assert.assertEquals(("Approved"), getText(String.valueOf(status)));
     }
 }
 
