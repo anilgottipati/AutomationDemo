@@ -1,32 +1,15 @@
 Feature: TestToVerifythePracticeForm
 
-  Scenario: Launch the form Browser
-    Given User launch Application
+  Scenario: Check Login is successfull
+    Given launch Application
+    And user enters username and password
+    When user click on login
+    Then user is navigate to homepage
 
-    Scenario: When user enter details
-      Given User launch Application
-      Given User Enter FirstName
-#      And User Enter  LastName
-#      When User Click Gender
-#      When User Enter  Email
-#      Then User Enter Mobile
-#      Then User Select State
-  Scenario: When user enter details1
-    Given User launch Application
-     And User Enter below details
-    |Option|Value|
-    |firstName|Radhika|
-    |lastName|C|
-    |userEmail |47@gmail|
-    |userNumber|47477444|
-    |stateCity-label| Haryana|
+    |username|password|
+    |Radhika |4747    |
 
-    Scenario: Verify Alerts message
-      Given User launch Application
-      When user click on alertwidget
-      And user on alerts page
-      And User click on "alertButton"
-      Then I Verify "You clicked a button" and Click "OK"
+
 
 
 

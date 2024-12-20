@@ -20,76 +20,27 @@ public class StepDefinition {
     PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
 
 
-    @Given("User launch Application")
-    public void userLaunchApplication() throws InterruptedException {
+    @Given("launch browser")
+    public void launchApplication() throws InterruptedException {
         PracticeFormPage.launchApplication();
     }
 
-
-    public void userEnter(String ele) {
-    }
-
-    @And("User Enter below details")
-    public void userEnterBelowDetails(DataTable dataTable) throws InterruptedException {
-        List<List<String>> rows = dataTable.asLists(String.class);
-        for (List<String> row : rows.subList(1, rows.size())) {
-            String Option = row.get(0);
-            String Value = row.get(1);
-            PracticeFormPage.EnterText(Option, Value);
-        }
-    }
-
-    @Then("User Select State")
-    public void userSelectState(String Option, String Value) throws InterruptedException {
-        WebElement element = driver.findElement(By.id("stateCity-label"));
-        practiceFormPage.SelectState("Value");
-    }
-
-    @Given("User Enter FirstName")
-    public void UserEnterFirstName() throws InterruptedException {
-        WebElement element = driver.findElement(By.id("firstName"));
-//        PracticeFormPage.EnterText(Option, Value);
-    }
-
-    @And("User Enter  LastName")
-    public void UserEnterLastName(String Option, String Value) throws InterruptedException {
-        WebElement element = driver.findElement(By.id("lastName"));
-        PracticeFormPage.EnterText(Option, Value);
-    }
-
-    @When("User Enter  Email")
-    public void UserEnterEmail(String Option, String Value) throws InterruptedException {
-        WebElement element = driver.findElement(By.id("userEmail"));
-        PracticeFormPage.EnterText(Option, Value);
-    }
-
-    @Then("User Enter Mobile")
-    public void UserEnterMobile(String Option, String Value) throws InterruptedException {
-        WebElement element = driver.findElement(By.id("userNumber"));
-        PracticeFormPage.EnterText(Option, Value);
-    }
-
-    @And("user on alerts page")
-    public void userOnAlertsPage() {
-        driver.findElement(By.id("alertButton")).click();
-        Alert alert = driver.switchTo().alert();
-    }
-
-    @Then("I Verify {string} and Click {string}")
-    public void iVerifyAndClick(String msg, String AlertButton) throws InterruptedException {
-        practiceFormPage.VerifyAlertText(AlertButton);
-        Assert.assertEquals(msg, practiceFormPage.VerifyAlertText(AlertButton));
-    }
-
-    @And("User click on {string}")
-    public void userClickOn(String text) throws InterruptedException {
+    @And("user enters username and password")
+    public void userEntersUsernameAndPassword() {
+        driver.findElement(By.name("username")).sendKeys("Radhika");
+        driver.findElement(By.name("password")).sendKeys("474747");
 
     }
 
 
-    @When("user click on alert widget")
-    public void user_click_on_alertwidget() {
-        driver.findElement(By.linkText("Open New Window")).click();
+    @When("user click on login")
+    public void userClickOnLogin() {
+         driver.findElement(By.name("submit")).click();
+    }
+
+
+    @Then("user is navigate to homepage")
+    public void userIsNavigateToHomepage() {
 
     }
 }
