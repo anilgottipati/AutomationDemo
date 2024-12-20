@@ -10,6 +10,7 @@ Feature: TestToVerifythePracticeForm
 
     |username|password|
     |Radhika |4747    |
+
     Scenario: After Login
     Then account services will display
   |Open New Account |

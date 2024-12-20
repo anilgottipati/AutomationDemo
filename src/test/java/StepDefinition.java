@@ -22,6 +22,11 @@ public class StepDefinition {
         practiceFormPage.launchApplication();
     }
 
+    @Given("user is on login page")
+    public void userIsOnLoginPage() {
+        driver.getCurrentUrl();
+    }
+
     @And("user enters username and password")
     public void userEntersUsernameAndPassword(String username, String password) {
         WebElement usernameElement = driver.findElement(By.id("username"));
@@ -92,6 +97,8 @@ public class StepDefinition {
         WebElement status = driver.findElement(By.id("loanStatus"));
         Assert.assertEquals(("Approved"), getText(String.valueOf(status)));
     }
+
+
 }
 
 
