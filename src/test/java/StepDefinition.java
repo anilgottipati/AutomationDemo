@@ -28,9 +28,12 @@ public class StepDefinition {
     }
 
     @And("user enters username and password")
-    public void userEntersUsernameAndPassword() {
-        driver.findElement(By.name("username")).sendKeys("Radhika");
-        driver.findElement(By.name("password")).sendKeys("474747");
+    public void userEntersUsernameAndPassword(String username, String password) {
+        WebElement usernameElement = driver.findElement(By.id("username"));
+        usernameElement.sendKeys("usename");
+
+            WebElement passwordElement = driver.findElement(By.id("password"));
+            passwordElement.sendKeys("password");
 
     }
 

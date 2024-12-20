@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import static java.awt.geom.Path2D.contains;
@@ -95,7 +97,7 @@ public class PracticeFormPage {
     }
 
     public void SimpleDateFormat{
-        public static void string(String[] args){
+        public static void string(String[] Date){
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY");
             String strDate= formatter.format(date);
