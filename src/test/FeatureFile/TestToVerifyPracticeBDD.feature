@@ -7,10 +7,10 @@ Feature: TestToVerifythePracticeForm
     And user enters username and password
     When user click on login
     Then user is navigate to homepage
-    Then account services will display
 
     |username|password|
     |Radhika |4747    |
+    Scenario: After Login
     Then account services will display
   |Open New Account |
   |Accounts Overview|
