@@ -18,7 +18,6 @@ import static java.lang.Thread.sleep;
 public class PracticeFormPage {
 
      static WebDriver driver;
-    private Object String;
 
 
     public PracticeFormPage(WebDriver driver) {
@@ -96,16 +95,16 @@ public class PracticeFormPage {
 
     public void EnterLoanText(String Option, String Value) throws InterruptedException {
         WebElement loanText = driver.findElement(LoanProvider);
-        Assert.assertEquals(loanText.getText(),("Wealth Securities Dynamic Loans (WSDL)"));
+        Assert.assertEquals(("Wealth Securities Dynamic Loans (WSDL)"), loanText.getText());
     }
 
     public void SimpleDateFormat(){
 
 
-            String = Date;
+        Object string = Date;
             {
             Date date = new Date();
-            SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             String strDate= formatter.format(date);
             System.out.println(strDate);
         }
@@ -113,7 +112,7 @@ public class PracticeFormPage {
 
     public void EnterloanStatusText(String Option, String Value) throws InterruptedException {
         WebElement loanStatus = driver.findElement(Status);
-        Assert.assertEquals(loanStatus.getText(),("Approved"));
+        Assert.assertEquals(("Approved"), loanStatus.getText());
     }
 
 
