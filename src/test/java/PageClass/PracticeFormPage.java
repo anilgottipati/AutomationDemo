@@ -1,17 +1,20 @@
 package PageClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import static java.awt.geom.Path2D.contains;
 import static java.lang.Thread.sleep;
 
 
 public class PracticeFormPage {
 
      static WebDriver driver;
+
 
     public PracticeFormPage(WebDriver driver) {
         PracticeFormPage.driver = driver;
@@ -23,11 +26,12 @@ public class PracticeFormPage {
 
      By usernameField = By.id("username");
     static By passwordField = By.id("password");
-    By LoginField;
-
-    {
-        LoginField = By.name("submit");
-    }
+    By LoginField = By.name("submit");
+    By LoanAmountField=By.id("amount");
+    By DownPaymentField=By.id("downPayment");
+    By LoanProvider=By.id("loanProviderName");
+    By Date=By.id("responseDate");
+    By Status=By.id("loanStatus");
 
 
     public static void launchApplication() throws InterruptedException {
@@ -66,7 +70,43 @@ public class PracticeFormPage {
         sleep(3000);
     }
 
+    public void navigatetohomepage(String Option)throws InterruptedException {
 
+    driver.findElement(By.xpath("//*[contains(text(),'parabank')]")).click();
+
+    }
+
+
+
+     public void EnterLoan(String Option, String Value) throws InterruptedException {
+         WebElement loan = driver.findElement(LoanAmountField);
+         loan.sendKeys("Value");
+     }
+
+    public void EnterDownPayment(String Option, String Value) throws InterruptedException {
+        WebElement downpayment = driver.findElement(DownPaymentField);
+        downpayment.sendKeys("Value");
+    }
+
+
+    public void EnterLoanText(String Option, String Value) throws InterruptedException {
+        WebElement loanText = driver.findElement(LoanProvider);
+        loanText.sendKeys("Wealth Securities Dynamic Loans (WSDL)");
+    }
+
+    public void SimpleDateFormat{
+        public static void string(String[] args){
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("DD-MM-YYYY");
+            String strDate= formatter.format(date);
+            System.out.println(strDate);
+        }
+    }
+
+    public void EnterloanStatusText(String Option, String Value) throws InterruptedException {
+        WebElement loanStatus = driver.findElement(Status);
+        loanStatus.sendKeys("Approved");
+    }
 
 
 }
