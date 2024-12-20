@@ -145,7 +145,7 @@ Bank Name :
 
 Method:
 ------
-Methos is a set of Program Instrutions that takes as Input and Produce as output.
+Method is a set of Program Instructions that takes as Input and Produce as output.
 Syntax:
 return Type Identity (Arg)
 {
