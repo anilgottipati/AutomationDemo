@@ -1,4 +1,3 @@
-package StepDefinitionFile;
 
 import PageClass.PracticeFormPage;
 import io.cucumber.java.en.And;
@@ -41,8 +40,8 @@ public class StepDefinition {
 
 
     @When("user click on login")
-    public void userClickOnLogin() {
-         driver.findElement(By.name("submit")).click();
+    public void userClickOnLogin() throws InterruptedException {
+        practiceFormPage.ClickButton(submit);
     }
 
 
@@ -70,6 +69,7 @@ public class StepDefinition {
         public void userEnterOnLoanAmount() {
         WebElement Amount = driver.findElement(By.id("amount"));
         Amount.sendKeys("1000");
+            practiceFormPage.EnterText("Amount");
     }
 
         @When("User Enter Down Payment")

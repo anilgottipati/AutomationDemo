@@ -85,6 +85,8 @@ public class PracticeFormPage {
          loan.sendKeys("Value");
      }
 
+
+
     public void EnterDownPayment(String Option, String Value) throws InterruptedException {
         WebElement downpayment = driver.findElement(DownPaymentField);
         downpayment.sendKeys("Value");
