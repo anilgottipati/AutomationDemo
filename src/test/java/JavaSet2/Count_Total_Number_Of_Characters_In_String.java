@@ -1,11 +1,9 @@
-package JavaStrings;
+package JavaSet2;
 
-import AccesModifiers.ClassA;
-import AccessModifiers1.ClassC;
 
 
 public class Count_Total_Number_Of_Characters_In_String {
-    int Count=0;
+
     public static void main(String[] args) throws InterruptedException {
 
         String ele = "Hi How are doing Today";
