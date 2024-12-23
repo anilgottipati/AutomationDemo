@@ -84,4 +84,14 @@ public class HomeStepDefinitionFile {
     public void userLaunchGmailApplication() {
         loginPage.launchGmailApplication();
     }
+
+    @Given("User launch WVPA Application")
+    public void userLaunchWVPAApplication() {
+        loginPage.launchWVPAApplication();
+    }
+
+    @When("User Click on {string}")
+    public void userClickOn(String text) throws InterruptedException {
+        practiceFormPage.ClickXpathButton(text);
+    }
 }

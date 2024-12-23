@@ -29,4 +29,10 @@ public class LoginPage {
         // Open a website
         driver.get("https://Gmail.com");
     }
+
+    public void launchWVPAApplication()
+    {
+        // Open a website
+        driver.get("https://wvtrgextweb01.int.wvpatcs.net/login");
+    }
 }

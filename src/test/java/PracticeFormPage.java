@@ -31,6 +31,9 @@ public class PracticeFormPage {
         usernameElement.click();
     }
 
+
+
+
     public void launchApplication()
     {
         WebDriverManager.chromedriver().setup();
@@ -42,9 +45,9 @@ public class PracticeFormPage {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
-    public void ClickXpathButton(String Option)
-    {
-        driver.findElement(By.xpath("//*text()="+Option+"")).click();
+    public void ClickXpathButton(String Option) throws InterruptedException {
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("(//*[@text='"+Option+"'])[1]")).click();
 
     }
 
