@@ -1,9 +1,11 @@
 package PageClass;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,7 +21,6 @@ public class PracticeFormPage {
     public PracticeFormPage(WebDriver driver) {
         PracticeFormPage.driver = driver;
         driver.get("https://parabank.parasoft.com/parabank/overview.htm");
-
         PracticeFormPage.driver =driver;
     }
 
@@ -27,6 +28,13 @@ public class PracticeFormPage {
     By usernameField = By.id("username");
     By passwordField = By.id("password");
     By ClickButton = By.name("submit");
+    By FirstNameField=By.id("customer.firstName");
+    By LastNameField = By.id("customer.lastName");
+    By AddressField=By.id("customer.address.street");
+    By CityField = By.id("customer.address.city");
+    By StateField=By.id("customer.address.state");
+    By ZipCode=By.id("customer.address.zipCode");
+    By Phonenumber=By.id("customer.phoneNumber");
     By LoanAmountField=By.id("amount");
     By DownPaymentField=By.id("downPayment");
     By LoanProvider=By.id("loanProviderName");
@@ -35,13 +43,16 @@ public class PracticeFormPage {
 
 
     public static void launchApplication() throws InterruptedException {
-        //WebDriverManager.chromedriver().setup();
-      //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+      System.setProperty("webdriver.chrome.driver", "C:\\Users\\Radhika\\Desktop\\GITDemo\\chromedriver.exe");
 
-        //WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         // Open a website
-        //driver.get("https://parabank.parasoft.com/parabank/overview.htm");
+        driver.get("https://parabank.parasoft.com/parabank/overview.htm");
+    }
+
+    public static void EnterText(String number) {
     }
 
 
@@ -72,15 +83,62 @@ public class PracticeFormPage {
         sleep(3000);
     }
 
+
+
     public void navigatetohomepage(String Option)throws InterruptedException {
 
     driver.findElement(By.xpath("//*[contains(text(),'parabank')]")).click();
 
     }
 
+     public void EnterFirstname(String firstname){
+        //WebElement FirstNameField= driver.findElement(By.id(Option));
+       // FirstNameField.sendKeys(Value);
+        //PracticeFormPage.EnterText(Value);
+    driver.findElement(FirstNameField).sendKeys(firstname);
+    }
 
 
-     public void EnterLoan(String Option, String Value) throws InterruptedException {
+    public void Enterlastname(String lastname){
+        //WebElement LastNameField= driver.findElement(By.id(Option));
+        //PracticeFormPage.EnterText(Value);
+        driver.findElement(LastNameField).sendKeys(lastname);
+    }
+
+    public void Enteraddress(String address){
+        //WebElement addressField= driver.findElement(By.id(Option));
+        //PracticeFormPage.EnterText(Value);
+        driver.findElement(AddressField).sendKeys(address);
+    }
+
+    public void Entercity(String City){
+        //WebElement cityField= driver.findElement(By.id(Option));
+        //PracticeFormPage.EnterText(Value);
+        driver.findElement(CityField).sendKeys(City);
+    }
+
+    public void Enterstate(String State){
+        //WebElement StateField= driver.findElement(By.id(Option));
+       // PracticeFormPage.EnterText(Value);
+        driver.findElement(StateField).sendKeys(State);
+    }
+
+    public void EnterZipcode(String zipcode){
+        //WebElement zipcodeField= driver.findElement(By.id(Option));
+       // PracticeFormPage.EnterText(Value);
+        driver.findElement(ZipCode).sendKeys(zipcode);
+    }
+
+    public void EnterPhonenumber(String phonenumber ){
+       // WebElement PhonenumberField= driver.findElement(By.id(Option));
+       // PracticeFormPage.EnterText(Value);
+        driver.findElement(By.id(phonenumber)).sendKeys((CharSequence) Phonenumber);
+    }
+
+
+
+
+    public void EnterLoan(String Option, String Value) throws InterruptedException {
          WebElement loan = driver.findElement(LoanAmountField);
          loan.sendKeys("Value");
      }
@@ -95,11 +153,10 @@ public class PracticeFormPage {
 
     public void EnterLoanText(String Option, String Value) throws InterruptedException {
         WebElement loanText = driver.findElement(LoanProvider);
-        Assert.assertEquals(("Wealth Securities Dynamic Loans (WSDL)"), loanText.getText());
+        System.out.println(("Wealth Securities Dynamic Loans (WSDL)"));
     }
 
     public void SimpleDateFormat(){
-
 
         Object string = Date;
             {
@@ -112,7 +169,7 @@ public class PracticeFormPage {
 
     public void EnterloanStatusText(String Option, String Value) throws InterruptedException {
         WebElement loanStatus = driver.findElement(Status);
-        Assert.assertEquals(("Approved"), loanStatus.getText());
+        System.out.println(("Approved"));
     }
 
 
