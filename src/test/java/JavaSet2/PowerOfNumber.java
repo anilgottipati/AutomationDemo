@@ -2,9 +2,9 @@ package JavaSet2;
 
 public class PowerOfNumber {
     public static void main(String[] args) throws InterruptedException {
-        int Count = 3;
+        int Count = 5;
         int finalNum=Count;
-       for (int i=0;i<=3;i++)
+       for (int i=0;i<=2;i++)
        {
            Count=finalNum*Count;
 

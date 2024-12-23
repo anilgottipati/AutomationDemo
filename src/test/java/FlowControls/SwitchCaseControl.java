@@ -4,7 +4,7 @@ public class SwitchCaseControl {
 
     public static void main(String[] args) throws InterruptedException {
 //byte, Short, Char, String, int, enum
-        int x = 10;
+        int x = 20;
         switch (x) {
             case 10:
                 System.out.println("Print 10");

@@ -6,7 +6,7 @@ public class ClassB {
 
         ClassA obj=new ClassA();
 
-//        System.out.println(obj.a); Cant be access from Another Class
+//        System.out.println(obj.a);// Cant be access from Another Class
         System.out.println(obj.b);
         System.out.println(obj.c);
         System.out.println(obj.d);

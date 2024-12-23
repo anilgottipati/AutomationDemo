@@ -1,31 +1,29 @@
 package Sample;
 
+import StaticvsNonStatic.StaticVariables;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Anagram {
     public static void main(String[] args) {
-        int a=123344;
-        String ele3 = Integer.toString(a);
-        String ele = "AAniLL";
 
-        char[] ele1 = ele3.toCharArray();
-        Map<Character, Integer> m = new HashMap<Character, Integer>();
-        for (Character c : ele1) {
-            if (m.containsKey(c)) {
-                m.put(c, m.get(c) + 1);
+        int[] a = {3, 4, 3, 6, 9, 8};
+        int max = a[0];
+        int min = a[0];
 
-            } else {
-                m.put(c, 1);
+        for (int i = 0; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i];
             }
-        }
-
-        for (Character c : m.keySet()) {
-            if (m.get(c) > 1) {
-                System.out.println("After Swapping1 a ="+c);
+            if (min > a[i]) {
+                min = a[i];
             }
+
         }
+        System.out.println("Minimum Number"+max);
+        System.out.println("Minimum Number"+min);
 
     }
 }
