@@ -158,3 +158,33 @@ Void MethodName(Void)
 int MethodName(Void)
 int MethodName(int)
 Void MethodName(int)
+
+Static and Non Static:
+---------------------
+Static Context also called as Class Level Context, no matter how many objects of that class create , they
+all will share the same. Whether it is Blocks, Properties or Methods all the Methods will
+share them.
+We no need to create a Object to access the Static Context.
+
+Where as for Non Static Context is per Object and we need to create an object to access the
+Non Static
+Ex:
+Banking
+Withdrawal()
+CheckBalance() --> Non Static
+
+Interest -->Static
+
+* Static Block will get executed by JVM when the class is loaded, even before the Main Method
+is called.
+
+* Any Functionality that is Specific to a Particular object of a class, should be define as
+Non Static.
+
+4 Non Static Members
+Non Static Variable
+Non Static Block
+Non Static User Methods
+Constructor
+
+We define an object and access them in Main Methods Static Blocks and User defined Method.
