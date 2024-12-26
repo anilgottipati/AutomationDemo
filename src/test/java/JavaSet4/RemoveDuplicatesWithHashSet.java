@@ -17,6 +17,6 @@ public class RemoveDuplicatesWithHashSet {
         }
         System.out.println("Count Chracters"+ m);
         Integer[] ele = m.toArray(new Integer[m.size()]);
-        System.out.println("Count Chracters"+ Arrays.toString(ele));
+        System.out.println("Count Chracters1"+ Arrays.toString(ele));
     }
 }

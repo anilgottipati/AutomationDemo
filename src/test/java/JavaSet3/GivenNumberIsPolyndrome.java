@@ -12,7 +12,7 @@ public class GivenNumberIsPolyndrome {
         int reminder=ele%10;
 
 //        rev=0*10+reminder;
-            rev=0+reminder;
+            rev=0+reminder; //Use Above also
 
         ele=ele/10;
             System.out.print(rev);

@@ -15,5 +15,6 @@ public class MissingElementInAnArray {
             Sum=Sum+c;
             System.out.println(Sum);
         }
+        System.out.println(num);
     }
 }
