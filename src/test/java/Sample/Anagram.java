@@ -7,11 +7,10 @@ import java.util.*;
 public class Anagram {
     public static void main(String[] args) {
 
-        String a = "QWERT";
+        String ele ="A";
 
-        StringBuffer sb = new StringBuffer(a);
-        sb.reverse();
-        System.out.print(sb);
+
+        System.out.println("LastThree"+(int)ele.charAt(0));
 
 }
 
