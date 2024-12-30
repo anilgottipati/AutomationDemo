@@ -7,15 +7,13 @@ import java.util.*;
 public class Anagram {
     public static void main(String[] args) {
 
-        int[] a = {5,4,1,2,6};
-        int size =a.length-1;
-        int last=a[size];
-        for (int i=size;i>0;i--)
+        String ele= "FLIPKART";
+        String lastThreeChar="";
+        for (int i=ele.length()-1;i>=ele.length()-3;i--)
         {
-            a[i]=a[i-1];
+            lastThreeChar=ele.charAt(i)+lastThreeChar+"";
         }
-        a[0]=last;
-        System.out.print(Arrays.toString(a));
+        System.out.print(lastThreeChar);
 
 
 
