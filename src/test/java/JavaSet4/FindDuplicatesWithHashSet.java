@@ -14,7 +14,7 @@ public class FindDuplicatesWithHashSet {
         {
             if(m.add(a[i])==false)
             {
-                System.out.println("Count Chracters"+ a[i]);
+                System.out.print("Count Chracters"+ a[i]);
             }
 //            if(m.contains(a[i]))
 //            {

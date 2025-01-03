@@ -7,19 +7,25 @@ import java.util.*;
 public class Anagram {
     public static void main(String[] args) {
 
-        String ele= "FLIPKART";
-        String lastThreeChar="";
-        for (int i=ele.length()-1;i>=ele.length()-3;i--)
-        {
-            lastThreeChar=ele.charAt(i)+lastThreeChar+"";
+        int[] a= {1,2,3,4,4,5,5,6,7,8,9,9};
+        int j=0;
+        Set<Integer> m= new HashSet<Integer>();
+        for (int i=0;i<a.length;i++){
+
+                m.add(a[i]);
+
+            }
+        System.out.println("Count Characters" +m);
         }
-        System.out.print(lastThreeChar);
 
 
 
 
     }
-}
+
+
+
+
 
 
 

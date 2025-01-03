@@ -6,15 +6,25 @@ public class Count_Total_Number_Of_Characters_In_String {
 
     public static void main(String[] args) throws InterruptedException {
 
-        String ele = "Hi How are doing Today";
-        int Count=0;
-        for (int i = 0; i < ele.length(); i++) {
-           if(ele.charAt(i)!=' ')
+        String ele = "EWABAAB";
+
+        for (int i=0;i<ele.length();i++)
+
+        {
+            for (int j=0;j<i;j++)
             {
-                Count++;
+                if(ele.charAt(i)==ele.charAt(j))
+                {
+//                    System.out.println("Maximum char of "+ele.charAt(i));
+                }
             }
+            System.out.println("Maximum char of "+ele.charAt(i));
+
         }
-        System.out.println(Count);
+
+
+
     }
+
 }
 

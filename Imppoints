@@ -188,3 +188,29 @@ Non Static User Methods
 Constructor
 
 We define an object and access them in Main Methods Static Blocks and User defined Method.
+
+
+Collections:
+Collections classes and their objects are dynamic, they grow dynamically during Run Time
+
+Collection Interface --> Implemented by
+List   --> Allow Duplicate Value  --> ArrayList and LinkedList
+Set is Implemented a Class HashSet and the HashSet is implemented by other class
+LinkedHashSet
+
+Set  --> Allow Duplicate Value  --> HashSet And SortedSet
+
+HashSet--> LinkedHashSet [Linked Maintain the Order of Elements which we add , Same Order]
+SortedSet-->TreeSet [SortedSet is Implemented by a Class Called TreeSet and Tree will Sort the Order]
+Queue --> First in First Out Data Object
+
+Map--> HashMap and SortedMap
+
+HashMap-->LinkedHashMap
+
+SortedMap-->TreeMap
+
+ArrayList--> Fast Access and if we Insert or remove any element apart from first and
+last , it wil reshuffle the entire array
+
+Be Default initial Capacity of an Array size 10, if we don't define it.
