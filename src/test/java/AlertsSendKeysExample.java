@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class AlertsExample {
+public class AlertsSendKeysExample {
     public static void main(String[] args) throws InterruptedException {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
@@ -21,13 +21,14 @@ public class AlertsExample {
 //        Thread.sleep(5000);
 //        driver.findElement(By.xpath("//span[text()='Alerts']")).click();
 //        Thread.sleep(5000);
-        driver.findElement(By.id("alertButton")).click();
+        driver.findElement(By.id("promtButton")).click();
         //Accept -->OK, Accept, Yes, Confirm  //dismiss -->NO, Decline, Cancel, Dismiss  //Gettext //SendKeys
 
         Alert simpleAlert = driver.switchTo().alert();
         String ele = simpleAlert.getText();
-        Assert.assertEquals("You clicked a button",ele);
-        simpleAlert.accept();
+        simpleAlert.sendKeys("Auto Demo");
+        Assert.assertEquals("Please enter your name",ele);
+        simpleAlert.dismiss();
         // Close the browser
         driver.close();
     }

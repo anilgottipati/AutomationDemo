@@ -12,7 +12,7 @@ public class ActionsExample {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil G\\Desktop\\Anil\\chromedriver.exe");
         // How are you Main
         // How are you Branch123
         WebDriver driver = new ChromeDriver();
@@ -26,7 +26,8 @@ public class ActionsExample {
         actions.moveToElement(menu).perform();
         Thread.sleep(5000);
         practiceFormPage.ClickButton("dropOption2");
-        Thread.sleep(5000);
+        boolean ele = driver.findElement(By.xpath("//*[text()='Link Two Selected']")).isDisplayed();
+        Assert.assertTrue(ele);
         WebElement elementToRightClick = driver.findElement(By.xpath("//*[text()='Link Two Selected']"));
         // Perform the right-click (context click)
         actions.contextClick(elementToRightClick).perform();

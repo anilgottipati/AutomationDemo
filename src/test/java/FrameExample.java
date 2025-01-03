@@ -10,13 +10,13 @@ public class FrameExample {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil G\\Desktop\\Anil\\chromedriver.exe");
         // Create an instance of Anil
         WebDriver driver = new ChromeDriver();
         // Open a website
         driver.get("https://demoqa.com/frames");
         Thread.sleep(10000);
-        driver.switchTo().frame("frame1");
+//        driver.switchTo().frame("frame1");
         String ele = driver.findElement(By.id("sampleHeading")).getText();
         // Close the browser
         driver.close();
