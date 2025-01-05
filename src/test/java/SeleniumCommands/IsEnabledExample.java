@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class launchBrowser {
+public class IsEnabledExample {
     public static void main(String[] args) throws InterruptedException {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
@@ -15,17 +15,13 @@ public class launchBrowser {
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
-        driver.get("C:\\Users\\Anil G\\Desktop\\Anil\\SeleniumWebSiteTraining\\Site1.html");
+        driver.get("file:///C:/Users/Anil%20G/Desktop/Anil/SeleniumWebSiteTraining/IsEnabled.html");
         Thread.sleep(5000);
-        boolean header = driver.findElement(By.xpath("//h1[text()='Welcome to My Test Site!']")).isDisplayed();
-        Thread.sleep(1000);
-        Assert.assertTrue(header);
-        driver.findElement(By.id("username")).sendKeys("user");
-        driver.findElement(By.id("password")).sendKeys("password");
-        driver.findElement(By.id("submitBtn")).click();
-        String welcomeMsg = driver.findElement(By.id("welcomeMessage")).getText();
-        Assert.assertEquals("welcome back, user!",welcomeMsg);
-        Assert.assertTrue(welcomeMsg.contains("welcome back"));
+        boolean ele = driver.findElement(By.name("email")).isEnabled();
+        Assert.assertFalse(ele);
+       
+
+      
         // Close the browser
         driver.close();
     }

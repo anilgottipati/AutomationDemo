@@ -1,4 +1,4 @@
-package SeleniumCommands;
+package Arundathi;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
