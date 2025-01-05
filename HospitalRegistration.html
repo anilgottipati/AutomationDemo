@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hospital Registration Form</h2>
+    <form action="submit_registration.php" method="POST">
+        <!-- Patient Details Section -->
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" id="patient_name" name="patient_name" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit phone number" required>
+
+        <!-- Registration Type Section -->
+        <label for="registration_type">Registration Type:</label>
+        <select id="registration_type" name="registration_type" required>
+            <option value="new">New Patient</option>
+            <option value="existing">Existing Patient</option>
+        </select>
+
+        <div id="existing_patient_details" style="display: none;">
+            <label for="patient_id">Patient ID:</label>
+            <input type="text" id="patient_id" name="patient_id" placeholder="Enter your patient ID">
+        </div>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Hospital System | All rights reserved</p>
+</div>
+
+<script>
+    // Show or hide Patient ID input for existing patient registration
+    document.getElementById('registration_type').addEventListener('change', function() {
+        var registrationType = this.value;
+        var existingPatientDetails = document.getElementById('existing_patient_details');
+        
+        if (registrationType === 'existing') {
+            existingPatientDetails.style.display = 'block';
+        } else {
+            existingPatientDetails.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

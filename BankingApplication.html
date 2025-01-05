@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #0066cc;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select, input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Banking Application Form</h2>
+    <form action="submit_application.php" method="POST">
+        <!-- Personal Information Section -->
+        <div>
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit phone number" required>
+        </div>
+
+        <!-- Account Information Section -->
+        <div class="section-title">Account Information</div>
+        <label for="account_type">Account Type:</label>
+        <select id="account_type" name="account_type" required>
+            <option value="savings">Savings Account</option>
+            <option value="checking">Checking Account</option>
+            <option value="business">Business Account</option>
+        </select>
+
+        <label for="initial_deposit">Initial Deposit ($):</label>
+        <input type="text" id="initial_deposit" name="initial_deposit" required>
+
+        <label>Do you want to enroll in online banking?</label>
+        <input type="radio" id="online_yes" name="online_banking" value="yes">
+        <label for="online_yes">Yes</label>
+        <input type="radio" id="online_no" name="online_banking" value="no" checked>
+        <label for="online_no">No</label>
+
+        <!-- Security Settings Section -->
+        <div class="section-title">Security Settings</div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+        <label>Security Question 1:</label>
+        <select id="security_question_1" name="security_question_1" required>
+            <option value="first_pet">What is your first pet's name?</option>
+            <option value="mother_maiden_name">What is your mother's maiden name?</option>
+            <option value="favorite_color">What is your favorite color?</option>
+        </select>
+        <input type="text" id="security_answer_1" name="security_answer_1" placeholder="Answer" required>
+
+        <label>Security Question 2:</label>
+        <select id="security_question_2" name="security_question_2" required>
+            <option value="childhood_friend">What was your childhood friend's name?</option>
+            <option value="first_car">What was your first car?</option>
+            <option value="city_of_birth">Which city were you born in?</option>
+        </select>
+        <input type="text" id="security_answer_2" name="security_answer_2" placeholder="Answer" required>
+
+        <!-- Transaction History Request Section -->
+        <div class="section-title">Transaction History</div>
+        <label for="transaction_history">Do you want to request your transaction history?</label>
+        <input type="checkbox" id="transaction_history" name="transaction_history" value="yes">
+        <label for="transaction_history">Yes, I would like to receive a statement of recent transactions.</label>
+
+        <div id="transaction_details" style="display: none;">
+            <label for="history_duration">Duration (Months):</label>
+            <select id="history_duration" name="history_duration">
+                <option value="1">1 Month</option>
+                <option value="3">3 Months</option>
+                <option value="6">6 Months</option>
+                <option value="12">12 Months</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Banking Application | All rights reserved</p>
+</div>
+
+<script>
+    // Toggle transaction history details visibility
+    document.getElementById('transaction_history').addEventListener('change', function() {
+        var transactionDetails = document.getElementById('transaction_details');
+        if (this.checked) {
+            transactionDetails.style.display = 'block';
+        } else {
+            transactionDetails.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

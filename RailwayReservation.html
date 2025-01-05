@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Railway Reservation System</h2>
+    <form action="submit_ticket.php" method="POST">
+        <!-- Passenger Details Section -->
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit phone number" required>
+
+        <!-- Train and Route Section -->
+        <label for="train">Select Train:</label>
+        <select id="train" name="train" required>
+            <option value="express">Express Train</option>
+            <option value="superfast">Superfast Train</option>
+            <option value="local">Local Train</option>
+        </select>
+
+        <label for="from_station">From Station:</label>
+        <input type="text" id="from_station" name="from_station" required>
+
+        <label for="to_station">To Station:</label>
+        <input type="text" id="to_station" name="to_station" required>
+
+        <label for="departure_date">Departure Date:</label>
+        <input type="date" id="departure_date" name="departure_date" required>
+
+        <label for="seat_class">Seat Class:</label>
+        <select id="seat_class" name="seat_class" required>
+            <option value="first_class">First Class</option>
+            <option value="second_class">Second Class</option>
+            <option value="sleeper">Sleeper</option>
+        </select>
+
+        <label for="ticket_count">Number of Tickets:</label>
+        <input type="number" id="ticket_count" name="ticket_count" min="1" max="10" required>
+
+        <button type="submit">Book Ticket</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Railway Reservation | All rights reserved</p>
+</div>
+
+</body>
+</html>

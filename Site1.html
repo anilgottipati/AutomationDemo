@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Test Site</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        .form-group { margin-bottom: 20px; }
+        .form-group input { padding: 10px; width: 200px; }
+        .form-group button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .form-group button:hover { background-color: #45a049; }
+        .alert { margin-top: 20px; padding: 10px; background-color: #f44336; color: white; display: none; }
+        .success { background-color: #4CAF50; }
+        .info { background-color: #2196F3; }
+        .welcome-message { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Test Site!</h1>
+
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+
+    <div class="form-group">
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <div class="alert" id="alert">Please enter valid credentials!</div>
+    <div class="welcome-message" id="welcomeMessage">
+        <h2>Welcome back, <span id="usernameDisplay"></span>!</h2>
+    </div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if(username === "user" && password === "password") {
+                document.getElementById("welcomeMessage").style.display = "block";
+                document.getElementById("usernameDisplay").innerText = username;
+                document.getElementById("alert").style.display = "none";
+            } else {
+                document.getElementById("alert").style.display = "block";
+                document.getElementById("welcomeMessage").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

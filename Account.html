@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Account Calculation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"], input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sales Account Calculation</h2>
+    <form id="salesForm">
+        <!-- Sales Information -->
+        <label for="item_price">Item Price ($):</label>
+        <input type="number" id="item_price" name="item_price" required>
+
+        <label for="quantity">Quantity Sold:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <label for="discount">Discount (%):</label>
+        <input type="number" id="discount" name="discount" min="0" max="100" required>
+
+        <label for="tax_rate">Tax Rate (%):</label>
+        <input type="number" id="tax_rate" name="tax_rate" min="0" required>
+
+        <button type="button" onclick="calculateTotal()">Calculate Total</button>
+    </form>
+
+    <div class="result">
+        <h3>Calculation Results:</h3>
+        <p><strong>Total Price Before Discount:</strong> $<span id="total_price_before_discount">0.00</span></p>
+        <p><strong>Discount Amount:</strong> $<span id="discount_amount">0.00</span></p>
+        <p><strong>Total After Discount:</strong> $<span id="total_after_discount">0.00</span></p>
+        <p><strong>Tax Amount:</strong> $<span id="tax_amount">0.00</span></p>
+        <p><strong>Total After Tax:</strong> $<span id="total_after_tax">0.00</span></p>
+    </div>
+</div>
+
+<script>
+    function calculateTotal() {
+        // Get the values from the form
+        var itemPrice = parseFloat(document.getElementById("item_price").value);
+        var quantity = parseInt(document.getElementById("quantity").value);
+        var discountRate = parseFloat(document.getElementById("discount").value);
+        var taxRate = parseFloat(document.getElementById("tax_rate").value);
+
+        // Check if all values are valid
+        if (isNaN(itemPrice) || isNaN(quantity) || isNaN(discountRate) || isNaN(taxRate) || itemPrice <= 0 || quantity <= 0) {
+            alert("Please enter valid values for all fields.");
+            return;
+        }
+
+        // Calculate the total price before discount
+        var totalPriceBeforeDiscount = itemPrice * quantity;
+
+        // Calculate discount amount
+        var discountAmount = (discountRate / 100) * totalPriceBeforeDiscount;
+
+        // Calculate total after discount
+        var totalAfterDiscount = totalPriceBeforeDiscount - discountAmount;
+
+        // Calculate tax amount
+        var taxAmount = (taxRate / 100) * totalAfterDiscount;
+
+        // Calculate final total after tax
+        var totalAfterTax = totalAfterDiscount + taxAmount;
+
+        // Display the results
+        document.getElementById("total_price_before_discount").innerText = totalPriceBeforeDiscount.toFixed(2);
+        document.getElementById("discount_amount").innerText = discountAmount.toFixed(2);
+        document.getElementById("total_after_discount").innerText = totalAfterDiscount.toFixed(2);
+        document.getElementById("tax_amount").innerText = taxAmount.toFixed(2);
+        document.getElementById("total_after_tax").innerText = totalAfterTax.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
