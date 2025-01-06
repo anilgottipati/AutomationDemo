@@ -1,10 +1,7 @@
 package Sample;
 
-import StaticvsNonStatic.StaticVariables;
 
-import java.util.*;
-
-public class Anagram {
+public class Sample {
     public static void main(String[] args) {
 
        String ele="Test Automation";
