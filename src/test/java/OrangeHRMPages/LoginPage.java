@@ -14,6 +14,7 @@ public class LoginPage {
     By InvalidErrorMsg = By.xpath("//*[text()='Invalid credentials']");
     // Constructor to initialize WebDriver
     public LoginPage(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -30,11 +31,18 @@ public class LoginPage {
 
 
 
+    public void EnterText(String FieldName,String Value)
+    {
+        WebElement usernameElement1 = driver.findElement(By.name(FieldName));
+        usernameElement1.sendKeys(Value);
+    }
     public void EnterPassword(String name)
     {
         WebElement usernameElement = driver.findElement(Password);
         usernameElement.sendKeys(name);
     }
+
+
 
     public void ClickButton()
     {
@@ -44,8 +52,15 @@ public class LoginPage {
 
     public void ClickButton(String ButtonName)
     {
-        WebElement SubmitElement = driver.findElement(By.xpath("//button[@type='"+ButtonName+"']"));
+        WebElement SubmitElement = driver.findElement(By.xpath("//*[@type='"+ButtonName+"']"));
         SubmitElement.click();
+    }
+
+
+    public boolean VerifyMsg(String text)
+    {
+        WebElement SubmitElement1 = driver.findElement(By.xpath("//*[text()='"+text+"']"));
+       return SubmitElement1.isDisplayed();
     }
     public boolean VerifyMessage()
     {
