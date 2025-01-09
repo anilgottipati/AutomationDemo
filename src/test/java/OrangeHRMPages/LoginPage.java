@@ -1,8 +1,10 @@
 package OrangeHRMPages;
 
+import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class LoginPage {
     WebDriver driver;
@@ -23,12 +25,34 @@ public class LoginPage {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
+    public void launchHospitalApplication()
+    {
+        driver.get("file:///C:/Users/Anil%20G/Desktop/Anil/SeleniumWebSiteTraining/HospitalRegistration.html");
+    }
+
     public void EnterUserName(String name)
     {
         WebElement usernameElement = driver.findElement(UserName);
         usernameElement.sendKeys(name);
     }
 
+    public void SelectDropDown(String dropdownName,String Value)
+    {
+        Select se=new Select(driver.findElement(By.id(dropdownName)));
+        se.selectByVisibleText(Value);
+    }
+
+    public String VerifyTitle()
+    {
+      return driver.getTitle();
+
+    }
+
+    public String VerifyUrl()
+    {
+        return driver.getCurrentUrl();
+
+    }
 
 
     public void EnterText(String FieldName,String Value)

@@ -72,4 +72,26 @@ public class LoginStepFile {
     public void verifyThe(String text) {
         Assert.assertTrue(loginPage.VerifyMsg(text));
     }
+
+    @Given("user launch the Hospital Application")
+    public void userLaunchTheHospitalApplication() {
+        loginPage.launchHospitalApplication();
+    }
+
+
+    @And("User Select the Option {string} from {string} dropdown")
+    public void userSelectTheOptionFromDropdown(String Value, String Dropdown) {
+        loginPage.SelectDropDown(Dropdown,Value);
+    }
+
+    @Then("Verify the Title Should be {string}")
+    public void verifyTheTitleShouldBe(String arg0) {
+
+        Assert.assertEquals("OrangeHRM",loginPage.VerifyTitle());
+    }
+
+    @Then("Verify the URL Should be {string}")
+    public void verifyTheURLShouldBe(String Text) {
+        Assert.assertTrue(loginPage.VerifyUrl().contains(Text));
+    }
 }
