@@ -8,7 +8,7 @@ public class FirstNonRepeativeCharInAGivenString {
 
     public static void main(String[] args) {
 
-        String a ="AMAZON";
+        String a ="BBAMAZONB";
         String ele = a.toLowerCase();
         char[] ele1 = ele.toCharArray();
 
@@ -25,13 +25,13 @@ public class FirstNonRepeativeCharInAGivenString {
             }
         }
 
-        for (int i=0;i<ele.length();i++)
+        for (int i=0;i<=ele.length();i++)
         {
             char ele11 = ele.charAt(i);
 
-            if(m.get(ele11)==1)
+            if(m.get(ele11)==2)
             {
-                System.out.println("Character"+ele11+ "Repeated for");
+                System.out.println("Character"+ele11+ "Repeated for"+m.get(ele11));
                 break;
             }
         }

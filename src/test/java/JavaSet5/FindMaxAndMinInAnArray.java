@@ -2,7 +2,7 @@ package JavaSet5;
 
 public class FindMaxAndMinInAnArray {
     public static void main(String[] args) {
-        int[] a ={1,5,4,7,8,10};
+        int[] a ={1,5,4,7,8,10,0};
         int max=a[0];
         int min=a[0];
         for (int i=0;i<a.length;i++)

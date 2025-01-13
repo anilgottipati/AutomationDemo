@@ -15,10 +15,10 @@ public class Count_Total_Number_Of_Characters_In_String {
             {
                 if(ele.charAt(i)==ele.charAt(j))
                 {
-//                    System.out.println("Maximum char of "+ele.charAt(i));
+                    System.out.println("Maximum char of1 "+ele.charAt(i));
                 }
             }
-            System.out.println("Maximum char of "+ele.charAt(i));
+//            System.out.print("Maximum char of "+ele.charAt(i));
 
         }
 
