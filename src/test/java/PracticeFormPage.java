@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PracticeFormPage {
 
     WebDriver driver;
-
+    By firstnameField = By.id("firstName");
     // Locators for the elements
     By usernameField = By.name("username");
     By passwordField = By.name("password");
@@ -23,6 +23,12 @@ public class PracticeFormPage {
         usernameElement.clear();
         usernameElement.sendKeys(Value);
         Thread.sleep(3000);
+    }
+
+    public void EnterFirstName(String Value) {
+        WebElement usernameElement = driver.findElement(firstnameField);
+        usernameElement.sendKeys(Value);
+
     }
 
     public void ClickButton(String Option)
@@ -108,4 +114,13 @@ public class PracticeFormPage {
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
     }
+
+    public void launchToolsQAlication()
+    {
+        // Open a website
+        driver.get("https://demoqa.com/automation-practice-form");
+    }
+
+
+
 }

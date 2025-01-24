@@ -94,4 +94,14 @@ public class HomeStepDefinitionFile {
     public void userClickOn(String text) throws InterruptedException {
         practiceFormPage.ClickXpathButton(text);
     }
+
+    @Given("User launched the Application")
+    public void userLaunchedTheApplication() {
+        practiceFormPage.launchToolsQAlication();
+    }
+
+    @When("I Enter the FirstName")
+    public void iEnterTheFirstName() {
+        practiceFormPage.EnterFirstName("SARAN");
+    }
 }
