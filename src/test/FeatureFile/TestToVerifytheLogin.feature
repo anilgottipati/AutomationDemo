@@ -5,7 +5,7 @@ Feature: TestToVerifytheLogin
       | Url |
     |https://www.google.com/|
   Scenario: Verify the Login Info
-#    When User Enter FirstName "SARAN"
+    When User Enter FirstName "SARAN"
     When User Enter the Following details
       | FieldName      | Value   |  |
       | APjFqb | SUNIL |  |
