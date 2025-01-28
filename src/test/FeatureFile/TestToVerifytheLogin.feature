@@ -3,11 +3,12 @@ Feature: TestToVerifytheLogin
   Background:
     Given User launch Application
       | Url |
-    |Gmail.com|
+    |https://www.google.com/|
   Scenario: Verify the Login Info
-    When User Enter FirstName
-    And User Enter LastName
-
+#    When User Enter FirstName "SARAN"
+    When User Enter the Following details
+      | FieldName      | Value   |  |
+      | APjFqb | SUNIL |  |
 
   Scenario: Verify the Email  info
     When User Enter the Following details
@@ -34,4 +35,4 @@ Examples:
       | currentAddress | Chennai |  |
 
   Scenario: Verify the Submit  info
-    When User Click on "submit" Button
+    When User Click on "alertbtn" Button

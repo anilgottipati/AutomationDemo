@@ -9,6 +9,7 @@ public class PracticeFormPage {
     WebDriver driver;
 
     // Locators for the elements
+    By name=By.id("name");
     By usernameField = By.name("username");
     By passwordField = By.name("password");
     By loginButton = By.xpath("//span[text()='Admin']");
@@ -20,6 +21,13 @@ public class PracticeFormPage {
 
     public void EnterText(String Option, String Value) throws InterruptedException {
         WebElement usernameElement = driver.findElement(By.id(Option));
+        usernameElement.clear();
+        usernameElement.sendKeys(Value);
+        Thread.sleep(3000);
+    }
+
+    public void EnterName(String Value) throws InterruptedException {
+        WebElement usernameElement = driver.findElement(name);
         usernameElement.clear();
         usernameElement.sendKeys(Value);
         Thread.sleep(3000);
