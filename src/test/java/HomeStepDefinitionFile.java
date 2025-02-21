@@ -94,4 +94,28 @@ public class HomeStepDefinitionFile {
     public void userClickOn(String text) throws InterruptedException {
         practiceFormPage.ClickXpathButton(text);
     }
+
+    @Given("User launch the Rahul Academy Application")
+    public void userLaunchTheRahulAcademyApplication() {
+        loginPage.launchRahulAcademyApplication();
+    }
+
+    @When("User Click on Alert")
+    public void userClickOnAlert() {
+        loginPage.ClickAlert();
+    }
+
+    @And("Alert Popup Message get displayed")
+    public void alertPopupMessageGetDisplayed() {
+        
+        
+    }
+
+    @And("User Click on OK Button")
+    public void userClickOnOKButton() {
+    }
+
+    @Then("Alert PopUp should Closed")
+    public void alertPopUpShouldClosed() {
+    }
 }

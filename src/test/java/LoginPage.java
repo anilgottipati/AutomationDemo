@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LoginPage {
 
     WebDriver driver;
-
+    By AlertButton = By.id("alertbtn");
     // Locators for the elements
     By usernameField = By.name("username");
     By passwordField = By.name("password");
@@ -34,5 +34,18 @@ public class LoginPage {
     {
         // Open a website
         driver.get("https://wvtrgextweb01.int.wvpatcs.net/login");
+    }
+
+    public void launchRahulAcademyApplication()
+    {
+        // Open a website
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+    }
+
+
+    public void ClickAlert()
+    {
+        WebElement usernameElement = driver.findElement(AlertButton);
+        usernameElement.click();
     }
 }
