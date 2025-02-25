@@ -13,6 +13,9 @@ public class LoginPage {
     By passwordField = By.name("password");
     By loginButton = By.xpath("//span[text()='Admin']");
     By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
+
+    By Entertext=By.id("name");
+    By EnterExample=By.id("displayed-text");
     // Constructor to initialize WebDriver
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -48,4 +51,25 @@ public class LoginPage {
         WebElement usernameElement = driver.findElement(AlertButton);
         usernameElement.click();
     }
+
+    public void  EnterName(String text)
+    {
+        WebElement usernameElement = driver.findElement(Entertext);
+        usernameElement.sendKeys(text);
+    }
+
+    public void  EnterHideExample(String text) throws InterruptedException {
+        WebElement usernameElement = driver.findElement(EnterExample);
+        usernameElement.clear();
+        usernameElement.sendKeys(text);
+        Thread.sleep(2000);
+    }
+
+    public void  ClickButton(String text) throws InterruptedException {
+        WebElement ClickB = driver.findElement(By.xpath(" //input[@value='"+text+"']"));
+        ClickB.click();
+        Thread.sleep(3000);
+    }
+
+
 }

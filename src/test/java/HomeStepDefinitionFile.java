@@ -51,6 +51,8 @@ public class HomeStepDefinitionFile {
 
     }
 
+
+
     @When("User Click on {string} Button")
     public void userClickOnButton(String Button) {
         practiceFormPage.ClickButton(Button);
@@ -107,7 +109,8 @@ public class HomeStepDefinitionFile {
 
     @And("Alert Popup Message get displayed")
     public void alertPopupMessageGetDisplayed() {
-        
+
+
         
     }
 
@@ -118,4 +121,42 @@ public class HomeStepDefinitionFile {
     @Then("Alert PopUp should Closed")
     public void alertPopUpShouldClosed() {
     }
+
+    @When("User Enter the Name")
+    public void userEnterTheName() {
+        loginPage.EnterName("Surendra");
+    }
+
+    @And("User Enter the Hide Example")
+    public void userEnterTheHideExample() throws InterruptedException {
+        loginPage.EnterHideExample("SurendraExample");
+    }
+
+    @When("User Enter the Name {string}")
+    public void userEnterTheName(String text) {
+        loginPage.EnterName(text);
+    }
+
+    @And("User Enter the Hide Example {string}")
+    public void userEnterTheHideExample(String arg0) throws InterruptedException {
+        loginPage.EnterHideExample(arg0);
+    }
+
+
+
+    @When("User click on the {string}")
+    public void userClickOnThe(String buttonname) throws InterruptedException {
+        loginPage.ClickButton(buttonname);
+    }
+
+    @When("User Enter the Following detail")
+    public void userEnterTheFollowingDetail(DataTable dataTable) throws InterruptedException {
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for (List<String> row : rows.subList(1, rows.size())) {  // Skipping header row
+            String FieldName = row.get(0);
+            loginPage.EnterHideExample(FieldName);
+        }
+    }
+
+
 }
