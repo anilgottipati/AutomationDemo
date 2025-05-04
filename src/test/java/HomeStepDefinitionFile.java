@@ -51,6 +51,19 @@ public class HomeStepDefinitionFile {
 
     }
 
+
+    @When("User Enter the Following details1")
+    public void user_enter_the_following_details1(DataTable dataTable) throws InterruptedException {
+        // Convert DataTable into a list of Users
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for (List<String> row : rows.subList(1, rows.size())) {  // Skipping header row
+            String FieldName = row.get(0);
+            String Value = row.get(1);
+            practiceFormPage.EnterText12(Value,FieldName);
+        }
+
+    }
+
     @When("User Click on {string} Button")
     public void userClickOnButton(String Button) {
         practiceFormPage.ClickButton(Button);
@@ -99,6 +112,13 @@ public class HomeStepDefinitionFile {
     public void userEnterFirstName(String name) throws InterruptedException {
         practiceFormPage.EnterName(name);
     }
+    @When("User Enter First Name")
+    public void user_enter_first_name() throws InterruptedException {
+        practiceFormPage.EnterFirstName("ANIL");
+    }
 
-
+    @When("User Enter {string} in {string}")
+    public void userEnterIn(String Value, String Field) throws InterruptedException {
+        practiceFormPage.EnterText12(Value,Field);
+    }
 }

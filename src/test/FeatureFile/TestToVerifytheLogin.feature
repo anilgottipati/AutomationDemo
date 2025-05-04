@@ -3,8 +3,31 @@ Feature: TestToVerifytheLogin
   Background:
     Given User launch Application
       | Url |
-    |https://www.google.com/|
+    |demoqa.com/automation-practice-form|
+
+  Scenario Outline: Verify the Login Info1
+    When User Enter "<FieldName>" in "firstName"
+    Examples:
+      | FieldName  |
+      | Shyam |
+      | Summmer |
+      | Anil |
+      | Winter |
+
   Scenario: Verify the Login Info
+    When User Enter the Following details1
+      | FieldName | Value           |
+      | firstName | Shyam           |
+      | lastName | Rane             |
+    When User Enter First Name
+    When User Enter "Anil" in "firstName"
+
+    When User Enter "Kumar" in "lastName"
+    When User Enter the Following details1
+      | FieldName | Value           |
+      | firstName | Shyam           |
+      | lastName | Rane             |
+
     When User Enter FirstName "SARAN"
     When User Enter the Following details
       | FieldName      | Value   |  |
