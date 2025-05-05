@@ -44,18 +44,3 @@ Feature: TestToVerifytheLogin
 
   Scenario Outline: Verify the Mobile  info
     When User Enter the "<FieldName>" and "<Value>"
-
-Examples:
-  | FieldName  | Value |
-  | userNumber | 87888 |
-  | userNumber | 87868 |
-  | userNumber | 87848 |
-  | userNumber | 87288 |
-
-  Scenario: Verify the Address  info
-    When User Enter the Following details
-      | FieldName      | Value   |  |
-      | currentAddress | Chennai |  |
-
-  Scenario: Verify the Submit  info
-    When User Click on "alertbtn" Button

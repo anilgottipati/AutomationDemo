@@ -1,0 +1,216 @@
+JDK-->Java Developer Kit
+Convert Source code to Byte Code
+
+Program To Run Needs an Environment
+JRE-->Java RunTime Environment Provides that Environment for Byte code to Run
+
+API-->Application Program Interface
+Provides Predefined without write lowlevel Back Ground Code
+Example:
+Reading and Writing Files
+Java IO Library
+
+Platform Independent Language:
+In language like C and C++ If source code is compiled on Particular Operating System
+like Windows it generates a Machine Code that only understand by the Windows OS and not by MAC
+or Linux vice Versa called Platform Dependency.
+
+In Java when we compiled the code, the Java Compiler generates the Intermediate code called
+Byte code, this is not Machine code for Particular Operating System.This byte code can be interpreted
+by Windows JVM JIT to underlined OS Windows and Windows JVM JIT to underlined Linux OS
+
+Oops:
+Map Real World Problems to Software Solutions
+
+Encapsulation:
+-------------
+It will Protect the properties and Functionalities of an object from other object
+
+Example: Like Capsule it have all Properties and Data of a Particular Object and we have all
+Methods that access particular Object
+
+Here Capsule is called a Class and Data we call it as Properties\Variables and Functionalities\Methods
+can access that data.
+If other objects need to access this data if we follow proper encapsulation then they always
+need to go through these Methods\Functionalities to access the Properties\variables of that Object.
+
+So Writing the Data and Code in one Single Unit, so in Java we use a Class to achieve the
+encapsulation
+Class
+{
+Data
+Code
+}
+
+Inheritance:
+-----------
+Inheritance is a Process of defining a new Object with the Help of Existing object.
+In Java we use key word Extends to inherit
+
+Example:
+Iphone 17 Extends Iphone 16
+
+Iphone 17-->Update Existing Object Functionalities
+Iphone 16-->Access Existing Object Functionalities
+
+Re-Usability:
+Vehicle->Car and Vehicle->Bus
+-->From Car it goes BMW or Audi
+-->From Bus it goes Volvo or Benz
+So first they use the Existing Functionalities and then Implement their own things called Inheritance.
+
+Is A Relation: Is Just a Term we refer in Inheritance
+BWW Is A Car, we cant say BMW is A Bus.
+
+
+Abstraction:
+-----------
+Abstraction is a Principle of hiding all Unnecessary details of an Object and only showing only the
+essential features that other object need in order to communicate with that Object.
+
+In Java we achieve the Abstraction using Interface
+
+Example: TV- We don't care about how it Implemented , we just Turn on and COntrol the TV
+Car-Same
+
+Polymorphism:
+------------
+Poly-- Multi
+
+Morphism-->Shapes\Behaviour
+
+If an object can take different Shapes and behave differently when other object accessed it
+at different points in time then that is called Polymorphism.
+In Java we will use Method Overloading and Overriding.
+
+Example:
+Person Interacts with Parents, Child and Colleagues.
+
+Person(Object) behave differently with Parents (Respect)
+Person(Object) behave differently with Child (Care)
+Person(Object) behave differently with Colleagues (Professional)
+So same object while communicating with other Objects expresses different behaviour, this
+is nothing but polymorphism
+
+Procedure Oriented and Object Oriented:
+--------------------------------------
+Sequence of tasks are to be done in Procedure
+Large Programs divided into Functions
+Data move openly from Function to Function in Procedure Oriented.
+Function Share the Global Data as there is no Access Specifiers
+Ex: C , COBOL
+
+Object Oriented that Modernises the Program by creating the Partitioned memory area for Data
+and methods that access the Data.
+Large Programs divided into Objects
+In Object Oriented data is hidden [Encapsulation]
+In Object Oriented we have access Specifiers [Public, Protected, Private]
+Ex: C++, Java
+
+Building Blocks of Java Applications;
+------------------------------------
+There are 4 Building blocks of Java applications
+Class
+Variables
+Methods
+Blocks
+
+In Oops every object is represented by a Class:
+variable and Methods can be static or Non Static
+
+Class (Unique Identity)
+{
+variable
+Methods
+Blocks
+}
+
+Variable:
+variable are identity that we give to a memory location where our data is Stored.
+Data Type  Identity:
+Int i=100;
+
+Non - Static --> each object will have its own values for Non Static variables.
+
+Account Number1:
+Account Number2:
+Balance1:4000
+Balance2:5000
+
+Static:
+If something is common across object Instances, then it is Static or Class level Variables
+If Each object have its onw value then it is Non-Static variables
+
+Bank Name :
+
+Method:
+------
+Method is a set of Program Instructions that takes as Input and Produce as output.
+Syntax:
+return Type Identity (Arg)
+{
+Body of Method
+}
+
+4 Types of Methods:
+------------------
+Void MethodName(Void)
+int MethodName(Void)
+int MethodName(int)
+Void MethodName(int)
+
+Static and Non Static:
+---------------------
+Static Context also called as Class Level Context, no matter how many objects of that class create , they
+all will share the same. Whether it is Blocks, Properties or Methods all the Methods will
+share them.
+We no need to create a Object to access the Static Context.
+
+Where as for Non Static Context is per Object and we need to create an object to access the
+Non Static
+Ex:
+Banking
+Withdrawal()
+CheckBalance() --> Non Static
+
+Interest -->Static
+
+* Static Block will get executed by JVM when the class is loaded, even before the Main Method
+is called.
+
+* Any Functionality that is Specific to a Particular object of a class, should be define as
+Non Static.
+
+4 Non Static Members
+Non Static Variable
+Non Static Block
+Non Static User Methods
+Constructor
+
+We define an object and access them in Main Methods Static Blocks and User defined Method.
+
+
+Collections:
+Collections classes and their objects are dynamic, they grow dynamically during Run Time
+
+Collection Interface --> Implemented by
+List   --> Allow Duplicate Value  --> ArrayList and LinkedList
+Set is Implemented a Class HashSet and the HashSet is implemented by other class
+LinkedHashSet
+
+Set  --> Allow Duplicate Value  --> HashSet And SortedSet
+
+HashSet--> LinkedHashSet [Linked Maintain the Order of Elements which we add , Same Order]
+SortedSet-->TreeSet [SortedSet is Implemented by a Class Called TreeSet and Tree will Sort the Order]
+Queue --> First in First Out Data Object
+
+Map--> HashMap and SortedMap
+
+HashMap-->LinkedHashMap
+
+SortedMap-->TreeMap
+
+ArrayList--> Fast Access and if we Insert or remove any element apart from first and
+last , it wil reshuffle the entire array
+
+Be Default initial Capacity of an Array size 10, if we don't define it.
