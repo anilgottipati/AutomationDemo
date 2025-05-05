@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -120,5 +121,35 @@ public class HomeStepDefinitionFile {
     @When("User Enter {string} in {string}")
     public void userEnterIn(String Value, String Field) throws InterruptedException {
         practiceFormPage.EnterText12(Value,Field);
+    }
+
+    @Given("User Launch the GreenKart Application")
+    public void userLaunchTheGreenKartApplication() {
+        loginPage.launchGreenKartApplication();
+    }
+
+    @And("Verify the {string} should get displayed")
+    public void verifyTheShouldGetDisplayed(String text) throws InterruptedException {
+        Assert.assertTrue(loginPage.VerifyText(text));
+    }
+
+    @And("User Enter {string} in Search box")
+    public void userEnterInSearchBox(String text) throws InterruptedException {
+        loginPage.Search(text);
+
+    }
+
+    @Then("{string} should get displayed")
+    public void shouldGetDisplayed(String arg0) {
+    }
+
+    @And("User Click on Add To Cart for {string}")
+    public void userClickOnAddToCartFor(String text) throws InterruptedException {
+loginPage.AddToCart(text);
+    }
+
+    @Then("Verify the Items Count should be {string}")
+    public void verifyTheItemsCountShouldBe(String count) throws InterruptedException {
+        Assert.assertEquals(loginPage.CartItems(),count);
     }
 }
