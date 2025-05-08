@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +20,7 @@ public class PracticeFormPage {
     public PracticeFormPage(WebDriver driver) {
         this.driver = driver;
     }
-
+     public static int FinalPrice;
     public void EnterText(String Option, String Value) throws InterruptedException {
         WebElement usernameElement = driver.findElement(By.id(Option));
         usernameElement.clear();
@@ -132,5 +133,25 @@ public class PracticeFormPage {
     {
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
+    }
+
+    public int GetAddedPrice(String item,int kgs) throws InterruptedException {
+        String price = driver.findElement(By.xpath("//*[text()='" + item + "']//parent::div//descendant::p")).getText();
+        int OriginalPrice = Integer.parseInt(price);
+        int noOfkgs=1+kgs;
+        this.FinalPrice=OriginalPrice*noOfkgs;
+        return FinalPrice;
+    }
+
+    public void GetQuantity(String  item,int Kgs) throws InterruptedException {
+        for (int i=1;i<=Kgs;i++) {
+            driver.findElement(By.xpath("//*[text()='" + item + "']//parent::div//descendant::a[@class='increment']")).click();
+        }
+    }
+
+    public void verifyItemPrice() throws InterruptedException {
+        String ActualPrice = driver.findElement(By.xpath("//*[text()='Price']//parent::tr//descendant::td/strong")).getText();
+        int Final = Integer.parseInt(ActualPrice);
+        Assert.assertEquals(Final,FinalPrice);
     }
 }

@@ -152,4 +152,15 @@ loginPage.AddToCart(text);
     public void verifyTheItemsCountShouldBe(String count) throws InterruptedException {
         Assert.assertEquals(loginPage.CartItems(),count);
     }
+
+    @And("User enter {int} Kg for {string}")
+    public void userEnterKgFor(int kgs, String Items) throws InterruptedException {
+        practiceFormPage.GetAddedPrice(Items,kgs);
+        practiceFormPage.GetQuantity(Items,kgs);
+    }
+
+    @Then("Verify the Item Price should be equal to Added Items")
+    public void verifyTheItemPriceShouldBeEqualToAddedItems() throws InterruptedException {
+        practiceFormPage.verifyItemPrice();
+    }
 }
