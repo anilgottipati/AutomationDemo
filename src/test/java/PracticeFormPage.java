@@ -10,6 +10,7 @@ public class PracticeFormPage {
     WebDriver driver;
 
     // Locators for the elements
+    By CartButton=By.xpath("//img[@alt='Cart']");
     By firstName=By.id("firstName");
     By name=By.id("name");
     By usernameField = By.name("username");
@@ -21,6 +22,9 @@ public class PracticeFormPage {
         this.driver = driver;
     }
      public static int FinalPrice;
+    public static int noOfkgs;
+    public static int OriginalPrice;
+    public static String ItemName;
     public void EnterText(String Option, String Value) throws InterruptedException {
         WebElement usernameElement = driver.findElement(By.id(Option));
         usernameElement.clear();
@@ -137,8 +141,9 @@ public class PracticeFormPage {
 
     public int GetAddedPrice(String item,int kgs) throws InterruptedException {
         String price = driver.findElement(By.xpath("//*[text()='" + item + "']//parent::div//descendant::p")).getText();
-        int OriginalPrice = Integer.parseInt(price);
-        int noOfkgs=1+kgs;
+        this.ItemName=item;
+        this.OriginalPrice = Integer.parseInt(price);
+        this.noOfkgs=1+kgs;
         this.FinalPrice=OriginalPrice*noOfkgs;
         return FinalPrice;
     }
@@ -154,4 +159,26 @@ public class PracticeFormPage {
         int Final = Integer.parseInt(ActualPrice);
         Assert.assertEquals(Final,FinalPrice);
     }
+
+    public void ClickCartButton() throws InterruptedException {
+      driver.findElement(CartButton).click();
+    }
+
+    public void verifyCartproductItemlist() throws InterruptedException {
+        String ActualItemName = driver.findElement(By.xpath("(//p[@class='product-name'])[1]")).getText();
+        String ActualProductPrice=driver.findElement(By.xpath("(//p[@class='product-price'])[1]")).getText();
+        String ActualFinalPrice=driver.findElement(By.xpath("(//p[@class='amount'])[1]")).getText();
+        String ActualQuantity=driver.findElement(By.xpath("(//p[@class='quantity'])[1]")).getText();
+
+        String ele = ActualQuantity.substring(0, 1);
+        String Oprice = String.valueOf(OriginalPrice);
+        String Fprice = String.valueOf(FinalPrice);
+        String NKgs = String.valueOf(noOfkgs);
+        Assert.assertEquals(ItemName,ActualItemName);
+        Assert.assertEquals(Oprice,ActualProductPrice);
+        Assert.assertEquals(Fprice,ActualFinalPrice);
+        Assert.assertEquals(NKgs,ele);
+
+    }
 }
+

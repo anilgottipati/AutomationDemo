@@ -163,4 +163,22 @@ loginPage.AddToCart(text);
     public void verifyTheItemPriceShouldBeEqualToAddedItems() throws InterruptedException {
         practiceFormPage.verifyItemPrice();
     }
+
+
+
+    @Then("Verify the Product Items should match with Items Added")
+    public void verifyTheProductItemsShouldMatchWithItemsAdded() throws InterruptedException {
+        practiceFormPage.verifyCartproductItemlist();
+
+    }
+
+    @When("User click on {string} button")
+    public void userclickOnButton(String arg0) throws InterruptedException {
+
+    }
+
+    @When("User click on Cart button")
+    public void userClickOnCartButton() throws InterruptedException {
+    practiceFormPage.ClickCartButton();
+    }
 }

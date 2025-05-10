@@ -23,3 +23,11 @@ Feature: TestToVerifySearchFunctionality
     And User Click on Add To Cart for "Cucumber"
     Then Verify the Item Price should be equal to Added Items
 
+  Scenario: TestToVerifyCheckoutCauliflower
+    Given User Launch the GreenKart Application
+    And User Enter "Cauliflower" in Search box
+    And User enter 2 Kg for "Cauliflower - 1 Kg"
+    And User Click on Add To Cart for "Cauliflower"
+    Then Verify the Item Price should be equal to Added Items
+    When User click on Cart button
+    Then Verify the Product Items should match with Items Added
