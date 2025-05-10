@@ -8,7 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PracticeFormPage {
 
     WebDriver driver;
-
+    By OrangeHRMUserName=By.name("username");
+    By OrangeHRMPassword=By.name("password");
     // Locators for the elements
     By CartButton=By.xpath("//img[@alt='Cart']");
     By firstName=By.id("firstName");
@@ -179,6 +180,17 @@ public class PracticeFormPage {
         Assert.assertEquals(Fprice,ActualFinalPrice);
         Assert.assertEquals(NKgs,ele);
 
+    }
+
+    public void EnterLoginCredentials(String UserName, String Password) throws InterruptedException {
+        driver.findElement(OrangeHRMUserName).sendKeys(UserName);
+        driver.findElement(OrangeHRMPassword).sendKeys(Password);
+        driver.findElement(By.xpath("//*[@type='submit']")).click();
+    }
+
+    public boolean VerifyText(String text) throws InterruptedException {
+        boolean ele = driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
+        return ele;
     }
 }
 

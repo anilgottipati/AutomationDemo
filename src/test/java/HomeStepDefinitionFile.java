@@ -174,11 +174,27 @@ loginPage.AddToCart(text);
 
     @When("User click on {string} button")
     public void userclickOnButton(String arg0) throws InterruptedException {
+        
 
     }
 
     @When("User click on Cart button")
     public void userClickOnCartButton() throws InterruptedException {
     practiceFormPage.ClickCartButton();
+    }
+
+    @Given("User Launch the OrangeHRM Application")
+    public void userLaunchTheOrangeHRMApplication() {
+        loginPage.launchOrangeHRMApplication();
+    }
+
+    @And("User Login with {string} and {string}")
+    public void userLoginWithAnd(String UserName, String Password) throws InterruptedException {
+        practiceFormPage.EnterLoginCredentials(UserName,Password);
+    }
+
+    @Then("{string} should displayed")
+    public void shouldDisplayed(String TestMsg) throws InterruptedException {
+        practiceFormPage.VerifyText(TestMsg);
     }
 }

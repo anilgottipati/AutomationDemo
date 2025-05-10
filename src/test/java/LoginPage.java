@@ -69,4 +69,10 @@ public class LoginPage {
       return  driver.findElement(By.xpath("//*[text()='Items']//parent::tr//descendant::td/strong")).getText();
 
     }
+
+    public void launchOrangeHRMApplication()
+    {
+        // Open a website
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    }
 }
