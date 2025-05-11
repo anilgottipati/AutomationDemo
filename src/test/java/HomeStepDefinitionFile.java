@@ -197,4 +197,20 @@ loginPage.AddToCart(text);
     public void shouldDisplayed(String TestMsg) throws InterruptedException {
         practiceFormPage.VerifyText(TestMsg);
     }
+
+    @Given("User Launch the SauceDemo Application")
+    public void userLaunchTheSauceDemoApplication() {
+
+        loginPage.launchSauceDemoAplication();
+    }
+
+    @And("User Select the Product Item with {int}")
+    public void userSelectTheProductItemWith(int productPrice) {
+        loginPage.ClickProduct(productPrice);
+    }
+
+    @When("User Enter {string} and {string}")
+    public void userEnterAnd(String User, String Pass) {
+        loginPage.EnterCredentialsSauceDemo(User,Pass);
+    }
 }

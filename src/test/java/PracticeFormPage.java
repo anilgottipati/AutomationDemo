@@ -183,9 +183,12 @@ public class PracticeFormPage {
     }
 
     public void EnterLoginCredentials(String UserName, String Password) throws InterruptedException {
-        driver.findElement(OrangeHRMUserName).sendKeys(UserName);
-        driver.findElement(OrangeHRMPassword).sendKeys(Password);
+        driver.findElement(By.name("username")).sendKeys(UserName);
+        Thread.sleep(2000);
+        driver.findElement(By.name("password")).sendKeys(Password);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@type='submit']")).click();
+        Thread.sleep(5000);
     }
 
     public boolean VerifyText(String text) throws InterruptedException {

@@ -15,6 +15,7 @@ public class LoginPage {
     By loginButton = By.xpath("//span[text()='Admin']");
     By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
     // Constructor to initialize WebDriver
+    public static String itemCount;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -66,13 +67,50 @@ public class LoginPage {
     }
 
     public String CartItems() throws InterruptedException {
-      return  driver.findElement(By.xpath("//*[text()='Items']//parent::tr//descendant::td/strong")).getText();
-
+        this.itemCount=
+       driver.findElement(By.xpath("//*[text()='Items']//parent::tr//descendant::td/strong")).getText();
+return itemCount;
     }
 
     public void launchOrangeHRMApplication()
     {
         // Open a website
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    }
+
+    public void launchSauceDemoAplication()
+    {
+        // Open a website
+        driver.get("https://www.saucedemo.com/");
+    }
+
+    public void ClickProduct(int ProductPrice)
+    {
+        int ele = driver.findElements(By.xpath("//div[@class='inventory_item_price']")).size();
+        for (int i=1;i<=ele;i++)
+        {
+            String PPrice=driver.findElement(By.xpath("(//div[@class='inventory_item_price'])["+i+"]")).getText();
+            String modified = PPrice.length() > 0 ? PPrice.substring(1) : PPrice;
+            System.out.println(PPrice);
+            String str = modified;
+            double value = Double.parseDouble(str);
+            int num = (int) value;
+
+
+            if(num>=ProductPrice-1 && num<ProductPrice+1)
+            {
+                driver.findElement(By.xpath("(//button[text()='Add to cart'])["+i+"]")).click();
+
+            }
+
+        }
+    }
+
+    public void EnterCredentialsSauceDemo(String User,String Pass)
+    {
+      driver.findElement(By.id("user-name")).sendKeys(User);
+        driver.findElement(By.id("password")).sendKeys(Pass);
+        driver.findElement(By.id("login-button")).click();
+
     }
 }
