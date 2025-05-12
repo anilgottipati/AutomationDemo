@@ -16,6 +16,7 @@ public class LoginPage {
     By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
     // Constructor to initialize WebDriver
     public static String itemCount;
+    public static int j;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -99,8 +100,14 @@ return itemCount;
 
             if(num>=ProductPrice-1 && num<ProductPrice+1)
             {
-                driver.findElement(By.xpath("(//button[text()='Add to cart'])["+i+"]")).click();
 
+                if(j>0)
+                {
+                    i=i-1;
+                }
+                driver.findElement(By.xpath("(//button[text()='Add to cart'])["+i+"]")).click();
+                j++;
+                this.j=j;
             }
 
         }

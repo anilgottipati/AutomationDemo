@@ -195,5 +195,19 @@ public class PracticeFormPage {
         boolean ele = driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
         return ele;
     }
+
+    public void ClickVegetable(String text,int kgs) throws InterruptedException {
+      int vegetableCount =  driver.findElements(By.xpath("//h4[@class='product-name']")).size();
+      for (int i=1;i<=vegetableCount;i++)
+      {
+          String vegetableName = driver.findElement(By.xpath("(//h4[@class='product-name'])[" + i + "]")).getText();
+          System.out.println(vegetableName);
+          if(vegetableName.contains(text))
+          {
+             driver.findElement(By.xpath("(//button[text()='ADD TO CART'])["+i+"]")).click();
+             break;
+          }
+      }
+    }
 }
 

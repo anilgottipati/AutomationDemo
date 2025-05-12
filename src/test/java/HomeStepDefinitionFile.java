@@ -213,4 +213,9 @@ loginPage.AddToCart(text);
     public void userEnterAnd(String User, String Pass) {
         loginPage.EnterCredentialsSauceDemo(User,Pass);
     }
+
+    @When("User Select vegetable {string} for {int} kg")
+    public void userSelectVegetableForKg(String vegName, int Kgs) throws InterruptedException {
+        practiceFormPage.ClickVegetable(vegName,Kgs);
+    }
 }

@@ -31,3 +31,9 @@ Feature: TestToVerifySearchFunctionality
     Then Verify the Item Price should be equal to Added Items
     When User click on Cart button
     Then Verify the Product Items should match with Items Added
+
+  Scenario: TestToVerifyCheckoutFindElements
+    Given User Launch the GreenKart Application
+    When User Select vegetable "Cucumber - 1 Kg" for 2 kg
+#    And User Click on Add To Cart for "Cucumber"
+#    Then Verify the Item Price should be equal to Added Items
