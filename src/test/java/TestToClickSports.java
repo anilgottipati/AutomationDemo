@@ -8,23 +8,28 @@ public class TestToClickSports {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anil\\Desktop\\GITDemo\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Akhil\\Desktop\\chrome\\chromedriver.exe");
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
-        practiceFormPage.SelectHobbies("Sports");
-//        int ele = driver.findElements(By.xpath("//label[contains(@for,'hobbies-checkbox')]")).size();
-//        for (int i=1;i<=ele;i++)  //1 2 3
-//        {
-//            String ele1 = driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).getText();
-//            if(ele1.contains("Sports"))
-//            {
-//                driver.findElement(By.xpath("//label[contains(@for,'hobbies-checkbox-" + i + "')]")).click();
-//            }
-//        }
-        // Close the browser
+
+        driver.findElement(By.id("firstName")).sendKeys("practice");
+        driver.findElement(By.id("lastName")).sendKeys("pract");
+        driver.findElement(By.id("userEmail")).sendKeys("pract@gmail.com");
+        driver.findElement(By.xpath("//label[@for='gender-radio-1']")).click();
+        driver.findElement(By.id("userNumber")).sendKeys("8765432191");
+        driver.findElement(By.xpath("//div[contains(@class,'subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3')]")).sendKeys("english");
+        driver.findElement(By.xpath("//label[@for='hobbies-checkbox-1']")).click();
+        driver.findElement(By.xpath("//label[@for='hobbies-checkbox-2']")).click();
+        driver.findElement(By.xpath("//label[@for='hobbies-checkbox-3']")).click();
+        driver.findElement(By.id("currentAddress")).sendKeys("hyderabad,telangana");
+        driver.findElement(By.id("submit")).click();
+
+
+
+
+        Thread.sleep(100000);
         driver.close();
     }
 }
