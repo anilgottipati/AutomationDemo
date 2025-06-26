@@ -4,11 +4,9 @@ import junit.framework.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-public class TestToClickSports {
+public class TestToVerifyAlertsToolsQA {
     public static void main(String[] args) throws InterruptedException {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
@@ -16,15 +14,17 @@ public class TestToClickSports {
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        driver.get("https://demoqa.com/alerts");
         Thread.sleep(5000);
-        driver.findElement(By.id("alertbtn")).click();
+        driver.findElement(By.id("promtButton")).click();
 
         Alert alt = driver.switchTo().alert();
-        String text = alt.getText();
-        Assert.assertEquals("Hello , share this practice page and share your knowledge",text);
+        alt.sendKeys("Testing");
         alt.accept();
-        alt.dismiss();
+        String ele = driver.findElement(By.id("promptResult")).getText();
+        Assert.assertEquals("You entered Testing",ele);
+        Thread.sleep(5000);
+//        alt.dismiss();
         //Hello , share this practice page and share your knowledge
         //Accept will work for OK, Accept, Submit , Proceed
         //Dismiss will work for Cancel, Dismiss, Reject , Stop

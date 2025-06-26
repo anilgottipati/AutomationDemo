@@ -4,11 +4,9 @@ import junit.framework.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-public class TestToClickSports {
+public class TestToVerifyToolsQATextBox {
     public static void main(String[] args) throws InterruptedException {
         // Setup WebDriver (automatically manages the browser driver)
         WebDriverManager.chromedriver().setup();
@@ -16,15 +14,20 @@ public class TestToClickSports {
         // Create an instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
         // Open a website
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        driver.get("https://demoqa.com/text-box");
         Thread.sleep(5000);
-        driver.findElement(By.id("alertbtn")).click();
-
-        Alert alt = driver.switchTo().alert();
-        String text = alt.getText();
-        Assert.assertEquals("Hello , share this practice page and share your knowledge",text);
-        alt.accept();
-        alt.dismiss();
+        driver.findElement(By.id("userName")).sendKeys("Testing");
+        Thread.sleep(5000);
+        driver.findElement(By.id("submit")).click();
+        String ele = driver.findElement(By.id("name")).getText();
+        Assert.assertEquals("Name:Testing",ele);
+//        Alert alt = driver.switchTo().alert();
+//        alt.sendKeys("Testing");
+//        alt.accept();
+//        String ele = driver.findElement(By.id("promptResult")).getText();
+//        Assert.assertEquals("You entered Testing",ele);
+        Thread.sleep(5000);
+//        alt.dismiss();
         //Hello , share this practice page and share your knowledge
         //Accept will work for OK, Accept, Submit , Proceed
         //Dismiss will work for Cancel, Dismiss, Reject , Stop
