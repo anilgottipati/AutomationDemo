@@ -207,10 +207,18 @@ loginPage.AddToCart(text);
         loginPage.ClickProduct(productPrice);
     }
 
-    @When("User Enter {string} and {string}")
-    public void userEnterAnd(String User, String Pass) {
-        loginPage.EnterCredentialsSauceDemo(User,Pass);
+
+
+
+
+    @Given("User Enter {string} and {string}")
+    public void user_enter_and(String UserName, String Password) {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.EnterCredentialsSauceDemo(UserName,Password);
     }
+
+
+
 
     @When("User Select vegetable {string} for {int} kg")
     public void userSelectVegetableForKg(String vegName, int Kgs) throws InterruptedException {

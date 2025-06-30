@@ -2,6 +2,7 @@ package PageClass;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
@@ -10,6 +11,9 @@ public class LoginPage {
     // Locators for the elements
     By Searchbox=By.xpath("//*[@class='search-keyword']");
     By usernameField = By.name("username");
+    By SauceUserName=By.id("user-name");
+    By SaucePassword=By.id("password");
+    By SauceLogin =By.id("login-button");
     By passwordField = By.name("password");
     By loginButton = By.xpath("//span[text()='Admin']");
     By HobbiesCheckBox = By.xpath("//label[contains(@for,'hobbies-checkbox')]");
@@ -24,6 +28,12 @@ public class LoginPage {
     {
         // Open a website
         driver.get("https://"+url+"");
+    }
+
+    public void launchSauceDemoApplication()
+    {
+        // Open a website
+        driver.get("https://www.saucedemo.com/");
     }
 
     public void launchGmailApplication()
@@ -119,4 +129,34 @@ return itemCount;
         driver.findElement(By.id("login-button")).click();
 
     }
+
+    public void EnterUserName(String text) throws InterruptedException {
+        Thread.sleep(5000);
+        WebElement username = driver.findElement(SauceUserName);
+        username.sendKeys(text);
+
+    }
+
+    public void EnterPassword(String text) throws InterruptedException {
+        Thread.sleep(5000);
+        WebElement Password = driver.findElement(SaucePassword);
+        Password.sendKeys(text);
+
+    }
+
+    public void ClickLogin() throws InterruptedException {
+        Thread.sleep(5000);
+        WebElement login = driver.findElement(SauceLogin);
+        login.click();
+
+    }
+
+    public boolean getsauceLabs() throws InterruptedException {
+        Thread.sleep(5000);
+        boolean ele = driver.findElement(By.xpath("//*[text()='Sauce Labs Backpack']")).isDisplayed();
+        return ele;
+
+    }
+
+
 }
