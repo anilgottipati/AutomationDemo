@@ -52,3 +52,13 @@ Feature: TestToVerifyTheDropDownOption
     | locked_out_user       |  secret_sauce        |
     |  problem_user               |secret_sauce|
     |  performance_glitch_user      |    secret_sauce      |
+
+  Scenario: TestToVerifyTheSuccessfulLogin
+
+    When User Enter the Following detail
+      | FieldName | Value           |
+      | firstName | Shyam           |
+      | lastName | Rane             |
+
+
+
