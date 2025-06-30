@@ -1,3 +1,5 @@
+package PageClass;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 import org.openqa.selenium.By;

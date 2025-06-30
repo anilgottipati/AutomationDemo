@@ -1,3 +1,5 @@
+import PageClass.LoginPage;
+import PageClass.PracticeFormPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -198,11 +200,7 @@ loginPage.AddToCart(text);
         practiceFormPage.VerifyText(TestMsg);
     }
 
-    @Given("User Launch the SauceDemo Application")
-    public void userLaunchTheSauceDemoApplication() {
 
-        loginPage.launchSauceDemoAplication();
-    }
 
     @And("User Select the Product Item with {int}")
     public void userSelectTheProductItemWith(int productPrice) {
@@ -218,4 +216,6 @@ loginPage.AddToCart(text);
     public void userSelectVegetableForKg(String vegName, int Kgs) throws InterruptedException {
         practiceFormPage.ClickVegetable(vegName,Kgs);
     }
+
+
 }
