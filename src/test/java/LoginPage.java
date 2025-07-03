@@ -9,6 +9,7 @@ public class LoginPage {
     WebDriver driver;
 
     // Locators for the elements
+    By FirstName=By.id("customer.firstName");
     By Searchbox=By.xpath("//*[@class='search-keyword']");
     By usernameField = By.name("username");
     By passwordField = By.name("password");
@@ -68,5 +69,21 @@ public class LoginPage {
     public String CartItems() throws InterruptedException {
       return  driver.findElement(By.xpath("//*[text()='Items']//parent::tr//descendant::td/strong")).getText();
 
+    }
+
+    public void Click_Button(String buttonname)
+    {
+        driver.findElement(By.xpath("//*[text()='"+buttonname+"']")).click();
+    }
+
+    public boolean isElementpresent(String name)
+    {
+        boolean flag = driver.findElement(By.xpath("//*[text()='" + name + "']")).isDisplayed();
+        return flag;
+    }
+
+    public void EnterRegistrationDetails(String FieldName, String Value)
+    {
+        driver.findElement(By.xpath("//b[text()='"+FieldName+":']//parent::td//parent::tr//child::td[2]/input")).sendKeys(Value);
     }
 }

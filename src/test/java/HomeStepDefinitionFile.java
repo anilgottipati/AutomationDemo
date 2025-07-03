@@ -163,4 +163,30 @@ loginPage.AddToCart(text);
     public void verifyTheItemPriceShouldBeEqualToAddedItems() throws InterruptedException {
         practiceFormPage.verifyItemPrice();
     }
+
+
+    @When("user Click on the {string}")
+    public void userClickOnThe(String buttonname) {
+        loginPage.Click_Button(buttonname);
+    }
+
+    @Then("Verify the Message {string}")
+    public void verifyTheMessage(String text) {
+        Assert.assertTrue(loginPage.isElementpresent(text));
+    }
+
+    @Then("Verify the {string} should get display")
+    public void verifyTheShouldGetDisplay(String text) {
+        Assert.assertTrue(loginPage.isElementpresent(text));
+    }
+
+    @When("User Fill the Registration details")
+    public void userFillTheRegistrationDetails(DataTable dataTable) {
+        List<List<String>> rows = dataTable.asLists(String.class);
+        for (List<String> row : rows.subList(1, rows.size())) {  // Skipping header row
+            String FieldName = row.get(0);
+            String Value = row.get(1);
+            loginPage.EnterRegistrationDetails(FieldName,Value);
+        }
+    }
 }
