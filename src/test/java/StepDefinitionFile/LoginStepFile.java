@@ -60,14 +60,6 @@ public class LoginStepFile {
 
     }
 
-    @When("User Enter the Following details1")
-    public void user_enter_the_following_details1(DataTable dataTable) throws InterruptedException {
-        // Convert DataTable into a list of Users
-        List<List<String>> rows = dataTable.asLists(String.class);
-        for (List<String> row : rows.subList(1, rows.size())) {  // Skipping header row
-            String FieldName = row.get(0);
-            String Value = row.get(1);
-        }
 
-    }
+
 }

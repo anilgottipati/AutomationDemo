@@ -42,5 +42,3 @@ Feature: TestToVerifytheLogin
       | userEmail | Auto3@gamil.com |  |
       | userEmail | Auto4@gamil.com |  |
 
-  Scenario Outline: Verify the Mobile  info
-    When User Enter the "<FieldName>" and "<Value>"
