@@ -3,12 +3,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class PracticeFormPage {
 
     WebDriver driver;
 
     // Locators for the elements
+    By medicalfirstname = By.id("fullName");
+    By Department= By.id("department");
+    By gender = By.id("gender");
     By name=By.id("name");
     By usernameField = By.name("username");
     By passwordField = By.name("password");
@@ -115,5 +119,51 @@ public class PracticeFormPage {
     {
         // Open a website
         driver.get("https://demoqa.com/automation-practice-form");
+    }
+
+    public void LaunchMedicalApplication()
+    {
+        driver.get("file:///C:/Users/Anil%20G/Desktop/Dummy/HospitalReg.html");
+    }
+
+    public void EnterMedicalFirstName()
+    {
+        WebElement firstname = driver.findElement(medicalfirstname);
+        firstname.sendKeys("Kishore");
+
+    }
+
+    public void EnterMedicalFirstName1(String name)
+    {
+        WebElement firstname = driver.findElement(medicalfirstname);
+        firstname.sendKeys(name);
+
+    }
+
+    public void SelectDropDown(String DropDownValue)
+    {
+        WebElement genderDropdown = driver.findElement(gender);
+        Select se = new Select(genderDropdown);
+        se.selectByVisibleText(DropDownValue);
+    }
+
+    public void SelectDepartmentDropDown(String DropDownValue)
+    {
+        WebElement genderDropdown = driver.findElement(Department);
+        Select se = new Select(genderDropdown);
+        se.selectByVisibleText(DropDownValue);
+    }
+
+    public void SelectDropDown1(String dropdownName,String DropDownValue)
+    {
+        WebElement dropdownField = driver.findElement(By.id(dropdownName));
+        Select se = new Select(dropdownField);
+        se.selectByVisibleText(DropDownValue);
+    }
+
+    public void EnterMedicalText(String fieldName, String fieldValue)
+    {
+        WebElement name = driver.findElement(By.id(fieldName));
+        name.sendKeys(fieldValue);
     }
 }

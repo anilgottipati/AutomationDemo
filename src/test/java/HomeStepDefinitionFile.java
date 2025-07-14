@@ -101,4 +101,37 @@ public class HomeStepDefinitionFile {
     }
 
 
+    @Given("User Launch the Hospital Application")
+    public void userLaunchTheHospitalApplication() {
+        practiceFormPage.LaunchMedicalApplication();
+    }
+
+    @When("User enter the full name")
+    public void userEnterTheFullName() {
+        practiceFormPage.EnterMedicalFirstName();
+    }
+
+    @When("User enter Full name {string}")
+    public void userEnterFullName(String firstN) {
+practiceFormPage.EnterMedicalFirstName1(firstN);
+    }
+
+    @When("User Select the Gender {string}")
+    public void userSelectTheGender(String value) {
+        practiceFormPage.SelectDropDown(value);
+    }
+
+    @When("USer Select the Department {string}")
+    public void userSelectTheDepartment(String arg0) {
+        practiceFormPage.SelectDepartmentDropDown(arg0);
+    }
+
+    @When("User Select {string} from {string} dropdown")
+    public void userSelectFromDropdown(String value, String name) {
+        practiceFormPage.SelectDropDown1(name,value);
+    }
+
+    @When("User Enter Registration Form details")
+    public void userEnterRegistrationFormDetails() {
+    }
 }
