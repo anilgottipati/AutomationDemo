@@ -27,7 +27,7 @@ public class LoginPage {
 
     public void launchGmailApplication()
     {
-        // Open a website
+        // Open a website Testing
         driver.get("https://Gmail.com");
     }
 
