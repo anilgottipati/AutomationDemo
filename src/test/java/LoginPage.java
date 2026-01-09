@@ -21,13 +21,13 @@ public class LoginPage {
 
     public void launchApplication(String url)
     {
-        // Open a website
+        // Open New website
         driver.get("https://"+url+"");
     }
 
     public void launchGmailApplication()
     {
-        // Open a website
+        // Open New website
         driver.get("https://Gmail.com");
     }
 
